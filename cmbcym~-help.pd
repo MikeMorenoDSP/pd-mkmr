@@ -1,0 +1,134 @@
+#N canvas 293 23 845 529 10;
+#X obj 106 395 cmbcym~;
+#X obj 106 439 clip~ -1 1;
+#X obj 106 461 hip~ 3;
+#X obj 106 483 dac~ 1 2;
+#X obj 106 417 *~ 0.7;
+#X obj 106 155 bng 17 250 50 0 empty empty TRIGGER 0 -8 0 10 -262144
+-1 -1;
+#X obj 106 177 i;
+#X obj 153 25 vsl 17 127 1 127 0 1 empty empty VELOCITY 0 -9 0 10 -262144
+-1 -1 12600 1;
+#X obj 153 160 nbx 3 17 1 127 0 0 empty empty empty 0 -8 0 10 -262144
+-1 -1 127 256;
+#X obj 296 111 hsl 128 17 0 127 0 1 \$0-attack empty ATTACK -2 -8 0
+10 -262144 -1 -1 0 1;
+#X obj 426 111 nbx 3 17 0 127 0 0 empty \$0-attack empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X obj 125 204 r \$0-attack;
+#X msg 125 226 attack \$1;
+#X obj 155 248 r \$0-decay;
+#X msg 155 270 decay \$1;
+#X obj 175 292 r \$0-noise;
+#X msg 175 314 noise \$1;
+#X msg 205 358 highpass \$1;
+#X obj 205 336 r \$0-highpass;
+#X obj 296 146 hsl 128 17 0 127 0 1 \$0-decay empty DECAY -2 -8 0 10
+-262144 -1 -1 12000 1;
+#X obj 426 146 nbx 3 17 0 127 0 0 empty \$0-decay empty 0 -8 0 10 -262144
+-1 -1 120 256;
+#X obj 296 181 hsl 128 17 0 127 0 1 \$0-noise empty NOISE -2 -8 0 10
+-262144 -1 -1 6400 1;
+#X obj 426 181 nbx 3 17 0 127 0 0 empty \$0-noise empty 0 -8 0 10 -262144
+-1 -1 64 256;
+#X obj 296 216 hsl 128 17 0 127 0 1 \$0-highpass empty HIGHPASS -2
+-8 0 10 -262144 -1 -1 6400 1;
+#X obj 426 216 nbx 3 17 0 127 0 0 empty \$0-highpass empty 0 -8 0 10
+-262144 -1 -1 64 256;
+#X text 476 76 INLET 1: Trigger / Velocity;
+#X text 476 112 INLET 2: Parameters;
+#X text 486 144 - DECAY: controls the decay for the noise env;
+#X text 476 229 INLET 3: Tuning;
+#X text 486 244 A list of 6 numbers to tune each comb filter (in Hz).
+;
+#X text 486 259 Default: 210.2 320.09 379.973 539.95 549.5 799.957
+;
+#X text 486 204 Default: 0 120 64 64;
+#X msg 308 317 130.2 250.7 317.8 475.9 521.43 745.321;
+#X msg 293 295 210.2 320.09 379.973 539.95 549.5 799.957;
+#X text 486 91 Trigger the cymbal by sending a number from 1 to 127
+;
+#X text 486 189 - HIGHPASS: Controls de cutoff freq.;
+#X text 486 174 - NOISE: controls the amount of noise.;
+#X text 486 159 and comb feedback.;
+#X text 486 128 - ATTACK: controls the attack for the burst env.;
+#X obj 293 378 t a;
+#X obj 293 251 hradio 17 1 1 4 empty empty TUNING 0 -8 0 10 -262144
+-1 -1 0;
+#X obj 293 273 sel 0 1 2 3;
+#X msg 324 339 205.3 369.6 304.3 522.7 1149.9 627.2;
+#X obj 12 97 tgl 17 0 empty empty PLAY-RHYTHM 0 -8 0 10 -262144 -1
+-1 0 1;
+#X obj 12 119 metro 125;
+#X obj 12 141 i;
+#X obj 12 163 % 16;
+#X obj 52 141 + 1;
+#X obj 12 185 t f b;
+#X obj 39 229 + 5;
+#X obj 39 207 random 4;
+#X obj 12 268 *;
+#X obj 12 290 % 16;
+#X obj 12 312 <;
+#X obj 39 251 t f f;
+#X obj 12 334 sel 1;
+#X obj 12 356 random 127;
+#X obj 12 378 + 1;
+#X msg 340 361 489.8 620.2 325.53 317.14 853.2 567.3;
+#X text 180 455 Miguel Moreno 2018;
+#X text 180 470 Email: mianmogra94@gmail.com;
+#X text 180 485 GitHub: github.com/MikeMorenoAudio;
+#X text 410 440 Facebook: fb.com/MikeMorenoAudio;
+#X text 410 455 Youtube: youtube.com/user/Lehjiot;
+#X text 410 470 WordPress: mikemorenoaudio.wordpress.com;
+#X text 410 485 PatchStorage: patchstorage.com/author/mianmogra;
+#X text 180 435 COMB CYMBAL v1;
+#X text 292 75 PARAMETERS;
+#X text 476 16 COMB CYMBAL;
+#X text 486 31 A Cymbal consisting of 6 comb filters with high feedback
+;
+#X text 486 46 and a noise impulse with velocity response.;
+#X connect 0 0 4 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 2 0 3 1;
+#X connect 4 0 1 0;
+#X connect 5 0 6 0;
+#X connect 6 0 0 0;
+#X connect 7 0 8 0;
+#X connect 8 0 6 1;
+#X connect 11 0 12 0;
+#X connect 12 0 0 1;
+#X connect 13 0 14 0;
+#X connect 14 0 0 1;
+#X connect 15 0 16 0;
+#X connect 16 0 0 1;
+#X connect 17 0 0 1;
+#X connect 18 0 17 0;
+#X connect 32 0 39 0;
+#X connect 33 0 39 0;
+#X connect 39 0 0 2;
+#X connect 40 0 41 0;
+#X connect 41 0 33 0;
+#X connect 41 1 32 0;
+#X connect 41 2 42 0;
+#X connect 41 3 58 0;
+#X connect 42 0 39 0;
+#X connect 43 0 44 0;
+#X connect 44 0 45 0;
+#X connect 45 0 46 0;
+#X connect 46 0 47 0;
+#X connect 46 0 48 0;
+#X connect 47 0 45 1;
+#X connect 48 0 51 0;
+#X connect 48 1 50 0;
+#X connect 49 0 54 0;
+#X connect 50 0 49 0;
+#X connect 51 0 52 0;
+#X connect 52 0 53 0;
+#X connect 53 0 55 0;
+#X connect 54 0 51 1;
+#X connect 54 1 53 1;
+#X connect 55 0 56 0;
+#X connect 56 0 57 0;
+#X connect 57 0 0 0;
+#X connect 58 0 39 0;
