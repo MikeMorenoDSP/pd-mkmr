@@ -1,0 +1,66 @@
+#N canvas 210 23 535 543 10;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array \$0-exp 44100 float 0;
+#X coords 0 1 44099 0 441 101 1 0 0;
+#X restore 12 410 graph;
+#X obj 124 253 tabwrite~ \$0-exp;
+#X obj 12 138 bng 17 250 50 0 empty empty PLOT 0 -9 0 10 -262144 -1
+-1;
+#X obj 32 165 s \$0-trg-env;
+#X text 365 169 1) Destination Value;
+#X text 355 149 inlet 0: list;
+#X text 365 184 2) Time (ms);
+#X text 365 199 3) Curve Factor (bipolar);
+#X obj 124 231 r \$0-trg-env;
+#X obj 12 236 hv.curve;
+#X text 145 329 https://github.com/dotmmb/mmb;
+#X text 145 309 Mike Moser-Booth;
+#X text 355 239 inlet 1: float;
+#X text 365 259 1) Curve Favor (bipolar);
+#X obj 12 187 f;
+#X obj 138 170 nbx 5 17 -6 6 0 0 empty \$0-curve CURVE-FACTOR 0 -8
+0 10 -262144 -1 -1 -3 256;
+#X obj 218 131 loadbang;
+#X msg 218 153 -3;
+#X text 145 289 Based on the [curve.mmb~] object from the mmb library
+;
+#X text 10 11 [hv.curve] - Exponential Ramp Generator;
+#X text 365 214 4) Delay (ms);
+#X text 145 379 https://github.com/MikeMorenoAudio;
+#X text 145 359 Made heavy compatible by Mike Moreno;
+#X obj 42 121 r bang @hv_event;
+#X obj 203 170 r curve @hv_param -6 6 0;
+#X obj 12 307 *~;
+#X obj 27 285 cos~;
+#X obj 27 263 osc~ 220;
+#X obj 89 290 tgl 17 0 empty empty LISTEN 0 -9 0 10 -262144 -1 -1 0
+1;
+#X obj 12 351 clip~ -1 1;
+#X obj 12 373 dac~;
+#X text 10 41 [hv.curve] is similar to [vline~] except that it can
+create curved ramps instead of just linear ones. Negative curve parameters
+produce convex increases and concave decays \, while positive values
+produce concave increases and convex decays.;
+#X obj 89 312 * 0.2;
+#X obj 12 329 *~;
+#X msg 12 209 1 250 \$1 \, 0.5 250 \$1 250 \, 0 250 \$1 750;
+#X connect 2 0 3 0;
+#X connect 2 0 14 0;
+#X connect 8 0 1 0;
+#X connect 9 0 25 0;
+#X connect 9 0 1 0;
+#X connect 14 0 34 0;
+#X connect 15 0 14 1;
+#X connect 16 0 17 0;
+#X connect 17 0 15 0;
+#X connect 23 0 2 0;
+#X connect 24 0 14 1;
+#X connect 25 0 33 0;
+#X connect 26 0 25 1;
+#X connect 27 0 26 0;
+#X connect 28 0 32 0;
+#X connect 29 0 30 0;
+#X connect 29 0 30 1;
+#X connect 32 0 33 1;
+#X connect 33 0 29 0;
+#X connect 34 0 9 0;
