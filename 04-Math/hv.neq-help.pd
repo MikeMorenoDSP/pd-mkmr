@@ -1,0 +1,17 @@
+#N canvas 1270 223 390 231 10;
+#X obj 31 162 env~;
+#X floatatom 31 207 5 0 0 0 - - -, f 5;
+#X floatatom 31 71 5 0 0 0 - - -, f 5;
+#X obj 64 113 sig~ 0;
+#X obj 31 91 sig~ 0;
+#X obj 31 184 dbtorms;
+#X text 23 14 Signal rate !=~ (not equal) operation.;
+#X text 23 30 Outputs 1 if left input is not equal to the right input
+\, 0 otherwise.;
+#X obj 31 137 hv.neq;
+#X connect 0 0 5 0;
+#X connect 2 0 4 0;
+#X connect 3 0 8 1;
+#X connect 4 0 8 0;
+#X connect 5 0 1 0;
+#X connect 8 0 0 0;

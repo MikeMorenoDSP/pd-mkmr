@@ -1,0 +1,126 @@
+#N canvas 306 23 632 623 10;
+#X obj 269 461 tgl 17 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 269 505 tabwrite~ \$0-scope;
+#X floatatom 12 136 9 0 0 1 Hz - -;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array \$0-scope 256 float 0;
+#X coords 0 1 256 -1 256 101 2 0 0;
+#X restore 361 424 graph;
+#X floatatom 12 94 5 0 0 0 - - -;
+#X obj 12 113 mtof;
+#X obj 12 518 clip~ -1 1;
+#X obj 12 540 hip~ 3;
+#X obj 12 72 line;
+#X obj 12 155 sig~;
+#X msg 12 50 135 \, 40 10000;
+#X obj 147 103 hradio 17 1 0 5 empty empty WAVEFORM 0 -8 0 10 -262144
+-1 -1 0;
+#X obj 12 464 *~;
+#X obj 72 464 *~;
+#X obj 269 417 loadbang;
+#X msg 269 439 1;
+#X obj 27 442 == 1;
+#X obj 87 442 == 2;
+#X obj 12 28 bng 17 250 50 0 empty empty FREQUENCY-SWEEP 0 -9 0 10
+-262144 -1 -1;
+#X text 144 4 0 = MUTE;
+#X obj 70 75 loadbang;
+#X text 246 48 The output can get a bit noisy at upper frequencies
+\, but reduces effects of aliasing when using a phasor~ and doesn't
+require wavetables.;
+#X text 236 349 http://musicdsp.org/files/bandlimited.pdf;
+#X text 236 364 http://www.martin-finke.de/blog/articles/audio-plugins-018-polyblep-oscillator/
+;
+#X text 236 334 https://github.com/cfloisand/pd-externals/tree/master/Source
+;
+#X text 237 31 Polynomial band-limited step (Polystep) oscillator;
+#X obj 12 584 dac~ 1 2;
+#X text 363 553 https://github.com/MikeMorenoAudio;
+#X msg 70 97 44100 64;
+#X obj 70 119 /;
+#X text 144 19 1 = SAW;
+#X text 144 34 2 = SQUARE;
+#X obj 132 464 *~;
+#X obj 147 442 == 3;
+#X obj 43 366 sig~ 0.5;
+#X text 237 11 [pb.vco];
+#X obj 46 344 hsl 128 17 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 6350 1;
+#X obj 43 300 loadbang;
+#X msg 43 322 0.5;
+#X obj 269 483 metro 50;
+#X obj 12 562 *~ 0.1;
+#X obj 12 491 *~ 1;
+#X text 363 533 Mike Moreno;
+#X text 56 158 inlet 0: signal/float;
+#X text 56 208 inlet 1: float;
+#X text 56 248 inlet 3: signal/float;
+#X text 66 178 1) incoming float or signal sets the frequency of the
+oscillator (in Hz).;
+#X text 66 228 1) resets the phase.;
+#X text 66 268 1) sets the pulse width for the square wave (0 to 1).
+;
+#X text 144 49 3 = TRIANGLE;
+#X text 416 118 outlet 0: signal;
+#X text 426 138 1) PolyBLEP Saw Wave;
+#X text 416 158 outlet 1: signal;
+#X text 426 178 1) PolyBLEP Square Wave;
+#X text 426 218 1) PolyBLEP Triangle Wave;
+#X text 416 198 outlet 2: signal;
+#X text 236 318 https://github.com/enzienaudio/heavylib;
+#X obj 147 125 s \$0-wav;
+#X obj 27 420 r \$0-wav;
+#X obj 87 420 r \$0-wav;
+#X obj 147 420 r \$0-wav;
+#X text 226 288 References:;
+#X text 226 303 (Saw and Squares waves are the same from heavylib)
+;
+#X obj 12 393 pb.triangle;
+#X obj 192 464 *~;
+#X obj 207 420 r \$0-wav;
+#X obj 207 442 == 4;
+#X text 416 238 outlet 3: signal;
+#X text 426 258 1) COSINE Wave;
+#X text 144 64 4 = COSINE;
+#X connect 0 0 39 0;
+#X connect 2 0 9 0;
+#X connect 4 0 5 0;
+#X connect 5 0 2 0;
+#X connect 6 0 7 0;
+#X connect 7 0 40 0;
+#X connect 8 0 4 0;
+#X connect 9 0 63 0;
+#X connect 10 0 8 0;
+#X connect 11 0 57 0;
+#X connect 12 0 41 0;
+#X connect 13 0 41 0;
+#X connect 14 0 15 0;
+#X connect 15 0 0 0;
+#X connect 16 0 12 1;
+#X connect 17 0 13 1;
+#X connect 18 0 10 0;
+#X connect 20 0 28 0;
+#X connect 28 0 29 0;
+#X connect 29 0 2 0;
+#X connect 32 0 41 0;
+#X connect 33 0 32 1;
+#X connect 34 0 63 1;
+#X connect 36 0 34 0;
+#X connect 37 0 38 0;
+#X connect 38 0 36 0;
+#X connect 39 0 1 0;
+#X connect 40 0 26 0;
+#X connect 40 0 26 1;
+#X connect 41 0 1 0;
+#X connect 41 0 6 0;
+#X connect 58 0 16 0;
+#X connect 59 0 17 0;
+#X connect 60 0 33 0;
+#X connect 63 0 12 0;
+#X connect 63 1 13 0;
+#X connect 63 2 32 0;
+#X connect 63 3 64 0;
+#X connect 64 0 41 0;
+#X connect 65 0 66 0;
+#X connect 66 0 64 1;
