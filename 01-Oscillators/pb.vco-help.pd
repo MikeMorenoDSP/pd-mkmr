@@ -2,12 +2,12 @@
 #X obj 209 464 tgl 17 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 209 508 tabwrite~ \$0-scope;
-#X floatatom 12 136 9 0 0 1 Hz - -, f 9;
+#X floatatom 12 136 9 0 0 1 Hz - -;
 #N canvas 0 22 450 278 (subpatch) 0;
 #X array \$0-scope 256 float 0;
 #X coords 0 1 256 -1 256 101 2 0 0;
 #X restore 331 424 graph;
-#X floatatom 12 94 5 0 0 0 - - -, f 5;
+#X floatatom 12 94 5 0 0 0 - - -;
 #X obj 12 113 mtof;
 #X obj 12 518 clip~ -1 1;
 #X obj 12 540 hip~ 3;
@@ -15,7 +15,7 @@
 #X obj 12 155 sig~;
 #X msg 12 50 135 \, 40 10000;
 #X obj 147 103 hradio 17 1 0 4 empty empty WAVEFORM 0 -8 0 10 -262144
--1 -1 0;
+-1 -1 2;
 #X obj 12 464 *~;
 #X obj 72 464 *~;
 #X obj 209 420 loadbang;
@@ -29,10 +29,10 @@
 #X text 226 58 The output can get a bit noisy at upper frequencies
 \, but reduces effects of aliasing when using a phasor~ and doesn't
 require wavetables.;
-#X text 226 349 http://musicdsp.org/files/bandlimited.pdf;
-#X text 226 364 http://www.martin-finke.de/blog/articles/audio-plugins-018-polyblep-oscillator/
+#X text 236 349 http://musicdsp.org/files/bandlimited.pdf;
+#X text 236 364 http://www.martin-finke.de/blog/articles/audio-plugins-018-polyblep-oscillator/
 ;
-#X text 226 334 https://github.com/cfloisand/pd-externals/tree/master/Source
+#X text 236 334 https://github.com/cfloisand/pd-externals/tree/master/Source
 ;
 #X text 227 31 Polynomial band-limited step (Polystep) oscillator;
 #X obj 12 584 dac~ 1 2;
@@ -72,7 +72,7 @@ oscillator (in Hz).;
 #X text 426 218 1) PolyBLEP Square Wave;
 #X text 426 258 1) PolyBLEP Triangle Wave;
 #X text 416 238 outlet 2: signal;
-#X text 226 318 https://github.com/enzienaudio/heavylib;
+#X text 236 318 https://github.com/enzienaudio/heavylib;
 #X obj 147 125 s \$0-wav;
 #X obj 27 420 r \$0-wav;
 #X obj 87 420 r \$0-wav;
@@ -105,7 +105,7 @@ oscillator (in Hz).;
 #X connect 30 0 2 0;
 #X connect 33 0 42 0;
 #X connect 34 0 33 1;
-#X connect 35 0 28 2;
+#X connect 35 0 28 1;
 #X connect 37 0 35 0;
 #X connect 38 0 39 0;
 #X connect 39 0 37 0;
