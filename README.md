@@ -12,3 +12,5 @@ For example, you could copy and paste several instances of [rlpf~] into subpatch
 * mmb library (https://github.com/dotmmb/mmb)
 * tom erbe (http://tre.ucsd.edu/wordpress/?p=285)
 * Katja Vetter freeverb
+* state variable filter (https://dsp.stackexchange.com/questions/41113/deriving-frequency-response-for-2-pole-zero-delay-feedback-state-variable-filter)
+* THE ART OF VA FILTER DESIGN (http://www.discodsp.net/VAFilterDesign_1.1.1.pdf)
