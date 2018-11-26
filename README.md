@@ -8,9 +8,9 @@ Also, abstractions and variables are kept to minimum in order to copy and paste 
 For example, you could copy and paste several instances of [rlpf~] into subpatches without needing to save it as an abstraction.
 
 ### References:
-* heavylib library (https://github.com/enzienaudio/heavylib)
-* mmb library (https://github.com/dotmmb/mmb)
-* tom erbe (http://tre.ucsd.edu/wordpress/?p=285)
-* Katja Vetter freeverb
-* state variable filter (https://dsp.stackexchange.com/questions/41113/deriving-frequency-response-for-2-pole-zero-delay-feedback-state-variable-filter)
-* THE ART OF VA FILTER DESIGN (http://www.discodsp.net/VAFilterDesign_1.1.1.pdf)
+* Enzien Audio - heavylib library (https://github.com/enzienaudio/heavylib)
+* Mike Moser-Booth - mmb library (https://github.com/dotmmb/mmb)
+* Tom Erbe - reverb in PD (http://tre.ucsd.edu/wordpress/?p=285)
+* Katja Vetter - vanilla freeverb
+* State Variable Filter (https://dsp.stackexchange.com/questions/41113/)
+* Vadim Zavalishin - The Art of VA ilter design (http://www.discodsp.net/VAFilterDesign_1.1.1.pdf)
