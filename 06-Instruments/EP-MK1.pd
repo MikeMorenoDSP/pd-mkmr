@@ -1,4 +1,4 @@
-#N canvas 1036 23 555 559 10;
+#N canvas 1036 23 684 559 10;
 #X obj 12 493 dac~ 1 2;
 #X obj 15 135 tgl 17 1 \$0-snd-pdl \$0-rcv-pdl PEDAL 0 -8 0 10 -262144
 -1 -1 0 1;
@@ -83,8 +83,7 @@ TREMOLO-FREQUENCY 0 -8 0 10 -262144 -1 -1 5 256;
 10 -262144 -1 -1 0 256;
 #N canvas 0 22 450 278 (subpatch) 0;
 #X array \$0-scale 12 float 3;
-#A 0 16.9155 34.8259 62.6866 170.149 106.468 80.5971 -90.5473 -102.488
--64.6767 -8.95522 8.95525 0.995041;
+#A 0 0 0 0 0 0 0 0 0 0 0 0 0;
 #X coords 0 200 12 -200 102 201 1 0 0;
 #X restore 435 31 graph;
 #N canvas 838 23 793 154 scale 0;
@@ -12569,6 +12568,13 @@ TREMOLO-FREQUENCY 0 -8 0 10 -262144 -1 -1 5 256;
 #X obj 247 485 table coswave;
 #X msg 86 507 \; coswave cosinesum 65536 0 1;
 #X obj 86 454 loadbang;
+#X text 350 422 Miguel Moreno 2018;
+#X text 350 437 Email: mianmogra94@gmail.com;
+#X text 350 452 GitHub: github.com/MikeMorenoAudio;
+#X text 350 477 Facebook: fb.com/MikeMorenoAudio;
+#X text 350 492 Youtube: youtube.com/user/Lehjiot;
+#X text 350 507 WordPress: mikemorenoaudio.wordpress.com;
+#X text 350 522 PatchStorage: patchstorage.com/author/mianmogra;
 #X connect 3 0 2 0;
 #X connect 4 0 5 0;
 #X connect 5 0 51 0;
