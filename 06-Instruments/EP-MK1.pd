@@ -17459,20 +17459,20 @@
 -66577 0;
 #X obj 481 148 cnv 17 90 182 empty empty empty 20 12 0 14 -228856 -66577
 0;
-#X obj 15 40 cnv 17 220 102 empty empty empty 20 12 0 14 -228856 -66577
+#X obj 105 40 cnv 17 220 102 empty empty empty 20 12 0 14 -228856 -66577
 0;
-#X obj 20 80 nbx 5 17 100 20000 0 1 \$0-bas-frq empty empty 0 -8 0
-10 -1 -262144 -1 440 256;
-#X text 18 64 BASE FREQUENCY;
-#X obj 120 80 nbx 5 17 0 127 0 1 \$0-bas-mid empty empty 0 -8 0 10
--1 -262144 -1 69 256;
-#X text 118 64 BASE MIDI NOTE;
-#X obj 20 120 nbx 5 17 1 100 0 1 \$0-num-div empty empty 0 -8 0 10
--33289 -262144 -1 12 256;
-#X obj 120 120 nbx 5 17 0 127 0 1 \$0-int-div empty empty 0 -8 0 10
--1 -262144 -1 2 256;
-#X text 18 104 # of DIVISIONS;
-#X text 118 104 INTERVAL TO DIVIDE;
+#X obj 110 80 nbx 5 17 100 20000 0 1 \$0-bas-frq \$0-rcv-bas-frq empty
+0 -8 0 10 -1 -262144 -1 440 256;
+#X text 108 64 BASE FREQUENCY;
+#X obj 210 80 nbx 5 17 0 127 0 1 \$0-bas-mid \$0-rcv-bas-mid empty
+0 -8 0 10 -1 -262144 -1 69 256;
+#X text 208 64 BASE MIDI NOTE;
+#X obj 110 120 nbx 5 17 1 100 0 1 \$0-num-div \$0-rcv-num-div empty
+0 -8 0 10 -33289 -262144 -1 12 256;
+#X obj 210 120 nbx 5 17 0 20 0 1 \$0-int-div \$0-rcv-int-div empty
+0 -8 0 10 -1 -262144 -1 2 256;
+#X text 108 104 # of DIVISIONS;
+#X text 208 104 INTERVAL TO DIVIDE;
 #X obj 170 228 nbx 4 17 1 2000 0 1 \$0-ton-rel \$0-rcv-ton-rel empty
 0 -8 0 10 -1 -262144 -1 10 256;
 #X text 168 212 RELEASE;
@@ -17487,7 +17487,6 @@ empty 0 -8 0 10 -1 -262144 -1 -6 256;
 #X text 238 172 SUS. PEDAL;
 #X obj 336 228 nbx 5 17 20 20000 0 1 \$0-pic-lop \$0-rcv-pic-lop empty
 0 -8 0 10 -1 -262144 -1 500 256;
-#X text 334 212 LOWPASS;
 #X obj 336 188 nbx 4 17 0 24 0 1 \$0-snd-pic-gan \$0-rcv-pic-gan empty
 0 -8 0 10 -1 -262144 -1 15 256;
 #X text 384 189 dB;
@@ -17505,19 +17504,18 @@ empty 0 -8 0 10 -1 -262144 -1 -30 256;
 #X text 218 269 dB;
 #X text 238 252 HAMMER LEVEL;
 #X obj 240 228 nbx 4 17 -100 0 0 1 \$0-snd-off-lvl \$0-rcv-off-lvl
-empty 0 -8 0 10 -1 -262144 -1 -19 256;
+empty 0 -8 0 10 -1 -262144 -1 -24 256;
 #X text 288 229 dB;
 #X text 238 212 NOTEOFF LEVEL;
 #X obj 20 228 nbx 5 17 20 20000 0 1 \$0-tin-hip \$0-rcv-tin-hip empty
 0 -8 0 10 -1 -262144 -1 2000 256;
 #X text 78 229 Hz;
-#X text 18 212 HIPASS;
-#X obj 20 188 nbx 4 17 1 30 0 1 \$0-tin-rat-1 \$0-rcv-tin-rat-1 empty
+#X obj 20 188 nbx 4 17 0 30 0 1 \$0-tin-rat-1 \$0-rcv-tin-rat-1 empty
 0 -8 0 10 -1 -262144 -1 7 256;
-#X obj 80 188 nbx 4 17 1 30 0 1 \$0-tin-rat-2 \$0-rcv-tin-rat-2 empty
+#X obj 80 188 nbx 4 17 0 30 0 1 \$0-tin-rat-2 \$0-rcv-tin-rat-2 empty
 0 -8 0 10 -1 -262144 -1 20 256;
 #X obj 20 268 nbx 4 17 1 2000 0 1 \$0-tin-dec \$0-rcv-tin-dec empty
-0 -8 0 10 -1 -262144 -1 800 256;
+0 -8 0 10 -1 -262144 -1 500 256;
 #X text 384 309 dB;
 #X obj 20 308 nbx 4 17 -100 0 0 1 \$0-snd-tin-lvl \$0-rcv-tin-lvl empty
 0 -8 0 10 -1 -262144 -1 -30 256;
@@ -17550,25 +17548,25 @@ empty 0 -8 0 10 -1 -262144 -1 -21 256;
 0 -8 0 10 -1 -262144 -1 0 256;
 #X text 484 212 SHAPE SIN/TRI;
 #X obj 486 308 nbx 4 17 -100 0 0 1 \$0-snd-tre-dep \$0-rcv-tre-dep
-empty 0 -8 0 10 -1 -262144 -1 -7 256;
+empty 0 -8 0 10 -1 -262144 -1 -9 256;
 #X text 534 309 dB;
 #X obj 486 188 tgl 17 1 \$0-snd-tre-tgl \$0-rcv-tre-tgl empty 17 7
-0 10 -1 -262144 -1 0 1;
+0 10 -1 -262144 -1 1 1;
 #X text 484 172 ON/OFF;
 #X text 484 292 DEPTH;
-#X obj 241 40 cnv 17 84 102 empty empty empty 20 12 0 14 -228856 -66577
+#X obj 15 40 cnv 17 84 102 empty empty empty 20 12 0 14 -228856 -66577
 0;
-#X obj 246 80 nbx 4 17 -100 0 0 1 \$0-snd-mas \$0-rcv-mas empty 0 -8
+#X obj 20 80 nbx 4 17 -100 0 0 1 \$0-snd-mas \$0-rcv-mas empty 0 -8
 0 10 -1 -262144 -1 0 256;
-#X text 294 81 dB;
-#X text 244 64 MASTER LEVEL;
-#X obj 246 120 bng 17 250 50 0 \$0-snd-mid \$0-rcv-mid empty 17 7 0
+#X text 68 81 dB;
+#X text 18 64 MASTER LEVEL;
+#X obj 20 120 bng 17 250 50 0 \$0-snd-mid \$0-rcv-mid empty 17 7 0
 10 -1 -258113 -1;
-#X text 244 104 MIDI;
-#X obj 286 120 bng 17 250 50 0 \$0-snd-stp \$0-rcv-stp empty 17 7 0
+#X text 18 104 MIDI;
+#X obj 60 120 bng 17 250 50 0 \$0-snd-stp \$0-rcv-stp empty 17 7 0
 10 -1 -258113 -1;
-#X text 284 104 STOP;
-#X obj 35 10 cnv 24 541 24 empty empty EP-MK1 5 13 1 24 -66577 -262144
+#X text 58 104 STOP;
+#X obj 35 10 cnv 24 541 24 empty empty EP-MK1 5 14 0 24 -66577 -262144
 0;
 #X obj 10 10 cnv 24 24 24 empty empty empty 20 12 0 14 -262144 -262144
 0;
@@ -17594,19 +17592,16 @@ empty 0 -8 0 10 -1 -262144 -1 -7 256;
 #X text 484 152 –– TREMOLO ––;
 #X text 334 152 ––––––– PICKUP –––––––
 ;
-#X obj 15 40 cnv 23 220 23 empty empty empty 20 12 0 14 -232576 -66577
+#X obj 105 40 cnv 23 220 23 empty empty empty 20 12 0 14 -232576 -66577
 0;
-#X text 18 44 ––––––––––––– TUNING –––––––––––––
+#X text 108 44 ––––––––––––– TUNING –––––––––––––
 ;
-#X obj 241 40 cnv 23 84 23 empty empty empty 20 12 0 14 -204786 -66577
+#X obj 15 40 cnv 23 84 23 empty empty empty 20 12 0 14 -204786 -66577
 0;
 #X obj 331 40 cnv 17 240 102 empty empty empty 20 12 0 14 -228856 -66577
 0;
-#X text 244 44 –– OUTPUT ––;
-#X text 334 64 EP-MK1 is a real time physical model;
+#X text 18 44 –– OUTPUT ––;
 #X text 334 79 of an Electric Piano.;
-#X text 334 44 –––––––––––––––– INFO
-––––––––––––––––;
 #X text 334 99 By Mike Moreno 2019;
 #X text 334 119 Email: mianmogra94@gmail.com;
 #X obj 375 380 poly 16 1;
@@ -17617,10 +17612,18 @@ empty 0 -8 0 10 -1 -262144 -1 -7 256;
 #X text 584 104 Youtube: youtube.com/c/MikeMorenoAudio;
 #X text 584 24 DONATE;
 #X text 584 39 paypal.me/mianmogra;
+#X text 168 81 440;
+#X obj 331 40 cnv 23 240 23 empty empty empty 20 12 0 14 -262144 -66577
+0;
+#X text 334 44 –––––––––––––––– INFO
+––––––––––––––––;
+#X text 18 212 HIGH-PASS FILTER;
+#X text 334 212 LOW-PASS FILTER;
+#X text 334 64 EP-MK1 is a real-time physical model;
 #X connect 1 0 2 0;
-#X connect 3 0 155 0;
+#X connect 3 0 151 0;
 #X connect 3 1 40 0;
-#X connect 3 1 155 1;
+#X connect 3 1 151 1;
 #X connect 4 0 0 0;
 #X connect 4 0 0 1;
 #X connect 5 0 6 0;
@@ -17628,8 +17631,8 @@ empty 0 -8 0 10 -1 -262144 -1 -7 256;
 #X connect 7 0 8 0;
 #X connect 8 0 10 1;
 #X connect 9 0 19 0;
-#X connect 10 0 135 0;
-#X connect 12 0 136 0;
+#X connect 10 0 133 0;
+#X connect 12 0 134 0;
 #X connect 13 0 28 0;
 #X connect 14 0 15 0;
 #X connect 15 0 16 1;
@@ -17662,17 +17665,17 @@ empty 0 -8 0 10 -1 -262144 -1 -7 256;
 #X connect 39 0 36 0;
 #X connect 40 0 41 0;
 #X connect 41 0 43 0;
-#X connect 42 0 155 0;
+#X connect 42 0 151 0;
 #X connect 44 0 42 0;
 #X connect 47 0 66 0;
+#X connect 128 0 129 0;
+#X connect 129 0 130 0;
 #X connect 130 0 131 0;
 #X connect 131 0 132 0;
-#X connect 132 0 133 0;
-#X connect 133 0 134 0;
-#X connect 134 0 135 1;
-#X connect 135 0 4 0;
-#X connect 136 0 10 0;
-#X connect 155 0 1 0;
-#X connect 155 1 1 1;
-#X connect 155 2 1 2;
+#X connect 132 0 133 1;
+#X connect 133 0 4 0;
+#X connect 134 0 10 0;
+#X connect 151 0 1 0;
+#X connect 151 1 1 1;
+#X connect 151 2 1 2;
 #X coords 0 -1 1 1 566 325 2 10 10;
