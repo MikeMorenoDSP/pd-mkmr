@@ -19,11 +19,11 @@
 #X obj 166 258 -~ 0.25;
 #X obj 166 279 cos~;
 #X obj 223 216 * 2;
-#X obj 166 22 inlet~ freq;
 #X obj 166 43 clip~ 0 20000;
 #X text 12 390 Based on The Art of VA Filter Design;
 #X text 12 410 http://www.discodsp.net/VAFilterDesign_1.1.1.pdf;
 #X text 12 370 Naive 1-pole lowpass filter;
+#X obj 166 22 inlet~;
 #X connect 0 0 3 0;
 #X connect 1 0 2 0;
 #X connect 2 0 5 0;
@@ -45,5 +45,5 @@
 #X connect 17 0 18 0;
 #X connect 18 0 1 1;
 #X connect 19 0 16 1;
-#X connect 20 0 21 0;
-#X connect 21 0 15 0;
+#X connect 20 0 15 0;
+#X connect 24 0 20 0;

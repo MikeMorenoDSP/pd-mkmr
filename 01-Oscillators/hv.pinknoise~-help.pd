@@ -106,18 +106,18 @@
 #X coords 0 5 255 0 256 100 1 0 0;
 #X restore 296 235 graph;
 #X obj 37 228 *~;
-#X obj 161 165 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 161 165 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 161 185 == 0;
 #X obj 75 383 dac~;
-#X floatatom 53 129 5 0 0 0 - - -, f 5;
-#X floatatom 171 118 5 0 0 0 - - -, f 5;
+#X floatatom 53 129 5 0 0 0 - - -;
+#X floatatom 171 118 5 0 0 0 - - -;
 #X obj 171 96 env~ 4096;
 #X obj 53 107 env~ 4096;
 #X obj 76 278 *~ 0.1;
 #X text 189 163 1 = pink \, 0 = white;
 #X obj 146 217 *~;
-#X obj 36 64 hv.pinknoise;
+#X obj 36 64 hv.pinknoise~;
 #X connect 0 0 9 0;
 #X connect 0 0 13 0;
 #X connect 3 0 11 0;

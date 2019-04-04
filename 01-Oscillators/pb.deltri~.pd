@@ -1,5 +1,5 @@
 #N canvas 847 217 847 335 10;
-#N canvas 829 466 271 432 integrator 0;
+#N canvas 829 466 271 432 integrator 1;
 #X obj 12 251 inlet~;
 #X obj 12 293 *~;
 #X obj 12 221 block~ 1 1 1;
@@ -25,7 +25,7 @@
 #X obj 12 371 *~ 1.25893;
 #X obj 12 392 clip~ -1 1;
 #X obj 57 350 delwrite~ \$0-tri 0;
-#X obj 57 279 delread~ \$0-tri 0;
+#X obj 96 227 delread~ \$0-tri 0;
 #X obj 57 258 *~ 0.0625;
 #X connect 0 0 19 0;
 #X connect 1 0 18 0;
