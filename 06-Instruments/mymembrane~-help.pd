@@ -1,0 +1,156 @@
+#N canvas 106 97 703 659 10;
+#X obj 102 591 dac~ 1 2;
+#N canvas 4 23 162 227 hv.tanh 0;
+#X obj 12 12 inlet~;
+#X obj 12 38 clip~ -3 3;
+#X obj 27 64 *~;
+#X obj 12 192 outlet~;
+#X obj 27 140 /~;
+#X obj 12 166 *~;
+#X obj 67 90 *~ 9;
+#X obj 27 90 +~ 27;
+#X obj 67 116 +~ 27;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 1 0 2 1;
+#X connect 1 0 5 0;
+#X connect 2 0 7 0;
+#X connect 2 0 6 0;
+#X connect 4 0 5 1;
+#X connect 5 0 3 0;
+#X connect 6 0 8 0;
+#X connect 7 0 4 0;
+#X connect 8 0 4 1;
+#X restore 102 570 pd hv.tanh;
+#X obj 114 302 hsl 128 15 70 500 1 1 empty empty FREQUENCY -2 -8 0
+10 -262144 -1 -1 10200 1;
+#X obj 132 372 hsl 128 15 0 1 0 1 empty empty DAMPING -2 -8 0 10 -262144
+-1 -1 9100 1;
+#X obj 141 407 hsl 128 15 -1 1 0 1 empty empty APF-GAIN -2 -8 0 10
+-262144 -1 -1 9600 1;
+#X obj 150 442 hsl 128 15 70 500 1 1 empty empty APF-FREQUENCY -2 -8
+0 10 -262144 -1 -1 3800 1;
+#X obj 123 337 hsl 128 15 0.5 1 1 1 empty empty FEEDBACK -2 -8 0 10
+-262144 -1 -1 8900 1;
+#X obj 165 502 tgl 15 1 empty empty RESET 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 159 477 hsl 128 15 0.001 1 1 1 empty empty NOISE-LEVEL -2 -8
+0 10 -262144 -1 -1 0 1;
+#X floatatom 244 302 5 0 0 1 Hz - -;
+#X floatatom 262 372 5 0 0 0 - - -;
+#X floatatom 280 442 5 0 0 1 Hz - -;
+#X floatatom 253 337 5 0 0 1 - - -;
+#X floatatom 271 407 5 0 0 0 - - -;
+#X floatatom 289 477 5 0 0 0 - - -;
+#X obj 102 523 mymembrane~;
+#X obj 102 33 pack f f;
+#X obj 102 12 notein;
+#X obj 102 246 bng 15 250 50 0 empty empty TRIGGER 0 -9 0 10 -262144
+-1 -1;
+#X obj 147 117 vsl 15 127 1 127 0 1 empty empty VELOCITY 0 -9 0 10
+-262144 -1 -1 10900 1;
+#X obj 102 266 i;
+#X floatatom 147 253 5 0 0 0 - - -;
+#X obj 102 101 t b f;
+#X obj 102 75 sel 0;
+#X obj 102 54 route 37;
+#X obj 12 286 tgl 15 0 empty empty PLAY-RHYTHM 17 7 0 10 -262144 -1
+-1 0 1;
+#X obj 12 306 metro 150;
+#X obj 12 327 i;
+#X obj 12 348 % 16;
+#X obj 42 327 + 1;
+#X obj 12 390 % 16;
+#X obj 12 369 * 7;
+#X obj 12 411 > 7;
+#X obj 12 432 sel 1;
+#X obj 12 453 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 12 473 random 127;
+#X obj 12 494 + 1;
+#X obj 42 211 key;
+#X obj 42 232 sel 49;
+#X text 336 158 INLET 1: Trigger / Velocity;
+#X text 346 513 Email: mianmogra94@gmail.com;
+#X text 346 528 GitHub: github.com/MikeMorenoAudio;
+#X text 346 553 Facebook: fb.com/MikeMorenoAudio;
+#X text 346 568 Youtube: youtube.com/user/Lehjiot;
+#X text 346 583 WordPress: mikemorenoaudio.wordpress.com;
+#X text 346 598 PatchStorage: patchstorage.com/author/mianmogra;
+#X text 336 478 mymembrane~ v1;
+#X text 346 498 Miguel Moreno 2019;
+#X text 336 123 A synthesizer focused on the creation of drum-like
+sounds.;
+#X text 346 173 Trigger the instrument by sending a number from 1 to
+127;
+#X text 346 230 Sets the frequency for the main delay line.;
+#X text 346 260 Sets the feedback amount for the main delay line.;
+#X text 346 290 Controls the amount of damping for the main delay line.
+;
+#X text 336 304 INLET 5: Allpass Filter Gain (-1 to 1);
+#X text 336 274 INLET 4: Damping (0 to 1);
+#X text 336 244 INLET 3: Feedback (-1 to 1);
+#X text 336 214 INLET 2: Frequency (20 to 5000~ Hz);
+#X text 346 350 Sets the frequency for the allpass filter.;
+#X text 346 320 Controls the amount of damping for the allpass filter.
+;
+#X text 336 334 INLET 6: Allpass Filter Frequency (20 to 5000~ Hz)
+;
+#X text 336 364 INLET 7: Noise Level;
+#X text 346 380 Controls the amounts of white noise in the mix.;
+#X text 346 410 Resets all the filters on each trigger making each
+hit consistent.;
+#X text 336 394 INLET 8: Reset (0 or 1);
+#X text 326 108 [mymembrane~];
+#X text 326 199 The following inlets are updated at trigger:;
+#X obj 102 549 *~ 2;
+#X text 331 40 ░░░░░░░░░░░░░┌┐░░░░░░░░░░░
+\; ┌──┬┬┬──┬─┬──┤└┬┬┬─┐┌─┬┬─┐
+\; │││││││││┴┤│││┼│┌┤┼└┤│││┴┤
+\; └┴┴┼┐├┴┴┴─┴┴┴┴─┴┘└──┴┴─┴─┘
+\; ░░░└─┘░░░░░░░░░░░░░░░░░░░░
+\;;
+#X text 42 191 Press 1!;
+#X connect 1 0 0 0;
+#X connect 1 0 0 1;
+#X connect 2 0 9 0;
+#X connect 2 0 15 1;
+#X connect 3 0 10 0;
+#X connect 3 0 15 3;
+#X connect 4 0 13 0;
+#X connect 4 0 15 4;
+#X connect 5 0 11 0;
+#X connect 5 0 15 5;
+#X connect 6 0 12 0;
+#X connect 6 0 15 2;
+#X connect 7 0 15 7;
+#X connect 8 0 15 6;
+#X connect 8 0 14 0;
+#X connect 15 0 66 0;
+#X connect 16 0 24 0;
+#X connect 17 0 16 0;
+#X connect 17 1 16 1;
+#X connect 18 0 20 0;
+#X connect 19 0 21 0;
+#X connect 20 0 15 0;
+#X connect 21 0 20 1;
+#X connect 22 0 18 0;
+#X connect 22 1 19 0;
+#X connect 23 1 22 0;
+#X connect 24 0 23 0;
+#X connect 25 0 26 0;
+#X connect 26 0 27 0;
+#X connect 27 0 28 0;
+#X connect 28 0 29 0;
+#X connect 28 0 31 0;
+#X connect 29 0 27 1;
+#X connect 30 0 32 0;
+#X connect 31 0 30 0;
+#X connect 32 0 33 0;
+#X connect 33 0 34 0;
+#X connect 34 0 35 0;
+#X connect 35 0 36 0;
+#X connect 36 0 15 0;
+#X connect 37 0 38 0;
+#X connect 38 0 18 0;
+#X connect 66 0 1 0;
