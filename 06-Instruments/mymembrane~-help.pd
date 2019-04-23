@@ -79,8 +79,6 @@
 #X text 346 598 PatchStorage: patchstorage.com/author/mianmogra;
 #X text 336 478 mymembrane~ v1;
 #X text 346 498 Miguel Moreno 2019;
-#X text 336 123 A synthesizer focused on the creation of drum-like
-sounds.;
 #X text 346 173 Trigger the instrument by sending a number from 1 to
 127;
 #X text 346 230 Sets the frequency for the main delay line.;
@@ -111,6 +109,8 @@ hit consistent.;
 \; ░░░└─┘░░░░░░░░░░░░░░░░░░░░
 \;;
 #X text 42 191 Press 1!;
+#X text 336 123 A synthesizer focused on the creation of acoustic drum-like
+sounds.;
 #X connect 1 0 0 0;
 #X connect 1 0 0 1;
 #X connect 2 0 9 0;
@@ -126,7 +126,7 @@ hit consistent.;
 #X connect 7 0 15 7;
 #X connect 8 0 15 6;
 #X connect 8 0 14 0;
-#X connect 15 0 66 0;
+#X connect 15 0 65 0;
 #X connect 16 0 24 0;
 #X connect 17 0 16 0;
 #X connect 17 1 16 1;
@@ -153,4 +153,4 @@ hit consistent.;
 #X connect 36 0 15 0;
 #X connect 37 0 38 0;
 #X connect 38 0 18 0;
-#X connect 66 0 1 0;
+#X connect 65 0 1 0;
