@@ -1,18 +1,18 @@
 #N canvas 0 23 1386 859 10;
 #X obj 124 391 hsl 128 15 70 500 1 1 empty empty FREQUENCY -2 -8 0
-10 -262144 -1 -1 2300 1;
+10 -262144 -1 -1 2900 1;
 #X obj 142 461 hsl 128 15 0 1 0 1 empty empty DAMPING -2 -8 0 10 -262144
--1 -1 3100 1;
+-1 -1 1000 1;
 #X obj 151 496 hsl 128 15 -1 1 0 1 empty empty APF-GAIN -2 -8 0 10
--262144 -1 -1 7700 1;
+-262144 -1 -1 12700 1;
 #X obj 160 531 hsl 128 15 70 500 1 1 empty empty APF-FREQUENCY -2 -8
-0 10 -262144 -1 -1 4300 1;
+0 10 -262144 -1 -1 12700 1;
 #X obj 133 426 hsl 128 15 0.5 1 1 1 empty empty FEEDBACK -2 -8 0 10
--262144 -1 -1 11400 1;
+-262144 -1 -1 12700 1;
 #X obj 175 591 tgl 15 1 empty empty RESET 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 169 566 hsl 128 15 0.001 1 1 1 empty empty NOISE-LEVEL -2 -8
-0 10 -262144 -1 -1 4500 1;
+0 10 -262144 -1 -1 5300 1;
 #X obj 112 746 dac~ 1 2;
 #N canvas 4 23 162 227 hv.tanh 0;
 #X obj 12 12 inlet~;
@@ -48,7 +48,7 @@
 #X obj 112 335 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 157 206 vsl 15 128 0 127 0 0 empty empty VELOCITY 0 -9 0 10
--262144 -1 -1 700 1;
+-262144 -1 -1 11400 1;
 #X obj 112 355 i;
 #X floatatom 157 342 5 0 0 0 - - -;
 #X obj 112 190 t b f;
@@ -70,19 +70,19 @@
 #X obj 12 129 s \$0-clock;
 #X obj 32 157 r \$0-clock;
 #X obj 424 391 hsl 128 15 70 500 1 1 empty empty FREQUENCY -2 -8 0
-10 -262144 -1 -1 9800 1;
+10 -262144 -1 -1 8100 1;
 #X obj 442 461 hsl 128 15 0 1 0 1 empty empty DAMPING -2 -8 0 10 -262144
--1 -1 4000 1;
+-1 -1 5100 1;
 #X obj 451 496 hsl 128 15 -1 1 0 1 empty empty APF-GAIN -2 -8 0 10
--262144 -1 -1 8600 1;
+-262144 -1 -1 8300 1;
 #X obj 460 531 hsl 128 15 70 500 1 1 empty empty APF-FREQUENCY -2 -8
-0 10 -262144 -1 -1 5400 1;
+0 10 -262144 -1 -1 5900 1;
 #X obj 433 426 hsl 128 15 0.5 1 1 1 empty empty FEEDBACK -2 -8 0 10
--262144 -1 -1 10500 1;
+-262144 -1 -1 10100 1;
 #X obj 475 591 tgl 15 1 empty empty RESET 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 469 566 hsl 128 15 0.001 1 1 1 empty empty NOISE-LEVEL -2 -8
-0 10 -262144 -1 -1 8800 1;
+0 10 -262144 -1 -1 8900 1;
 #X floatatom 554 391 5 0 0 1 Hz - -;
 #X floatatom 572 461 5 0 0 0 - - -;
 #X floatatom 590 531 5 0 0 1 Hz - -;
@@ -95,7 +95,7 @@
 #X obj 412 335 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 457 206 vsl 15 128 0 127 0 0 empty empty VELOCITY 0 -9 0 10
--262144 -1 -1 6600 1;
+-262144 -1 -1 11400 1;
 #X obj 412 355 i;
 #X floatatom 457 342 5 0 0 0 - - -;
 #X obj 412 190 t b f;
@@ -112,9 +112,9 @@
 #X obj 412 654 tabwrite~ \$0-mem2;
 #X obj 412 143 route 37;
 #X obj 724 391 hsl 128 15 70 500 1 1 empty empty FREQUENCY -2 -8 0
-10 -262144 -1 -1 8800 1;
+10 -262144 -1 -1 9700 1;
 #X obj 742 461 hsl 128 15 0 1 0 1 empty empty DAMPING -2 -8 0 10 -262144
--1 -1 6600 1;
+-1 -1 3000 1;
 #X obj 751 496 hsl 128 15 -1 1 0 1 empty empty APF-GAIN -2 -8 0 10
 -262144 -1 -1 2800 1;
 #X obj 760 531 hsl 128 15 70 500 1 1 empty empty APF-FREQUENCY -2 -8
@@ -137,7 +137,7 @@
 #X obj 712 335 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 757 206 vsl 15 128 0 127 0 0 empty empty VELOCITY 0 -9 0 10
--262144 -1 -1 11100 1;
+-262144 -1 -1 1600 1;
 #X obj 712 355 i;
 #X floatatom 757 342 5 0 0 0 - - -;
 #X obj 712 190 t b f;
@@ -149,19 +149,19 @@
 #X obj 712 633 throw~ \$0-M;
 #X obj 632 178 r \$0-clock;
 #X obj 1024 391 hsl 128 15 70 500 1 1 empty empty FREQUENCY -2 -8 0
-10 -262144 -1 -1 7400 1;
+10 -262144 -1 -1 4200 1;
 #X obj 1042 461 hsl 128 15 0 1 0 1 empty empty DAMPING -2 -8 0 10 -262144
--1 -1 4000 1;
+-1 -1 9500 1;
 #X obj 1051 496 hsl 128 15 -1 1 0 1 empty empty APF-GAIN -2 -8 0 10
--262144 -1 -1 7200 1;
+-262144 -1 -1 8700 1;
 #X obj 1060 531 hsl 128 15 70 500 1 1 empty empty APF-FREQUENCY -2
--8 0 10 -262144 -1 -1 3900 1;
+-8 0 10 -262144 -1 -1 9600 1;
 #X obj 1033 426 hsl 128 15 0.5 1 1 1 empty empty FEEDBACK -2 -8 0 10
--262144 -1 -1 10200 1;
+-262144 -1 -1 12400 1;
 #X obj 1075 591 tgl 15 1 empty empty RESET 17 7 0 10 -262144 -1 -1
 1 1;
 #X obj 1069 566 hsl 128 15 0.001 1 1 1 empty empty NOISE-LEVEL -2 -8
-0 10 -262144 -1 -1 3000 1;
+0 10 -262144 -1 -1 0 1;
 #X floatatom 1154 391 5 0 0 1 Hz - -;
 #X floatatom 1172 461 5 0 0 0 - - -;
 #X floatatom 1190 531 5 0 0 1 Hz - -;
@@ -174,7 +174,7 @@
 #X obj 1012 335 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 1057 206 vsl 15 128 0 127 0 0 empty empty VELOCITY 0 -9 0 10
--262144 -1 -1 10300 1;
+-262144 -1 -1 4700 1;
 #X obj 1012 355 i;
 #X floatatom 1057 342 5 0 0 0 - - -;
 #X obj 1012 190 t b f;
