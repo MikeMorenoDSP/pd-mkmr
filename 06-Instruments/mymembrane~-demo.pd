@@ -1,4 +1,4 @@
-#N canvas 0 23 1386 859 10;
+#N canvas 463 100 1386 859 10;
 #X obj 124 391 hsl 128 15 70 500 1 1 empty empty FREQUENCY -2 -8 0
 10 -262144 -1 -1 2900 1;
 #X obj 142 461 hsl 128 15 0 1 0 1 empty empty DAMPING -2 -8 0 10 -262144
@@ -48,7 +48,7 @@
 #X obj 112 335 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 157 206 vsl 15 128 0 127 0 0 empty empty VELOCITY 0 -9 0 10
--262144 -1 -1 11400 1;
+-262144 -1 -1 7900 1;
 #X obj 112 355 i;
 #X floatatom 157 342 5 0 0 0 - - -;
 #X obj 112 190 t b f;
@@ -95,7 +95,7 @@
 #X obj 412 335 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 457 206 vsl 15 128 0 127 0 0 empty empty VELOCITY 0 -9 0 10
--262144 -1 -1 11400 1;
+-262144 -1 -1 10100 1;
 #X obj 412 355 i;
 #X floatatom 457 342 5 0 0 0 - - -;
 #X obj 412 190 t b f;
@@ -137,7 +137,7 @@
 #X obj 712 335 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 757 206 vsl 15 128 0 127 0 0 empty empty VELOCITY 0 -9 0 10
--262144 -1 -1 1600 1;
+-262144 -1 -1 10000 1;
 #X obj 712 355 i;
 #X floatatom 757 342 5 0 0 0 - - -;
 #X obj 712 190 t b f;
@@ -174,7 +174,7 @@
 #X obj 1012 335 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 1057 206 vsl 15 128 0 127 0 0 empty empty VELOCITY 0 -9 0 10
--262144 -1 -1 4700 1;
+-262144 -1 -1 11400 1;
 #X obj 1012 355 i;
 #X floatatom 1057 342 5 0 0 0 - - -;
 #X obj 1012 190 t b f;
