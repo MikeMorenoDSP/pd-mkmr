@@ -1,0 +1,37 @@
+#N canvas 734 321 706 619 10;
+#X text 47 26 [line~] based replacement for [vline~];
+#X msg 198 112 1 1000;
+#X msg 286 230 stop;
+#X msg 255 159 0;
+#X text 263 109 ramp up;
+#X msg 227 134 0 1000;
+#X text 290 137 ramp down;
+#X text 277 181 ramp up \, jump down \, ramp up again;
+#X text 293 158 jump down;
+#X text 329 229 "stop" message freezes vline~ at its current value
+;
+#X text 49 42 Note: This object isn't doing any block boundary calculation
+or interpolation \, so the output could be very slightly different
+to [vline~];
+#X obj 238 360 env~;
+#X obj 238 382 dbtorms;
+#X floatatom 238 404 5 0 0 0 - - -, f 5;
+#X msg 271 202 1 1000 \, 0 0 1000 \, 1 1000 1000;
+#X obj 198 275 hv.vline;
+#X obj 86 295 osc~ 440;
+#X obj 86 366 *~;
+#X obj 86 405 dac~;
+#X obj 101 344 *~ 0.5;
+#X connect 1 0 15 0;
+#X connect 2 0 15 0;
+#X connect 3 0 15 0;
+#X connect 5 0 15 0;
+#X connect 11 0 12 0;
+#X connect 12 0 13 0;
+#X connect 14 0 15 0;
+#X connect 15 0 11 0;
+#X connect 15 0 19 0;
+#X connect 16 0 17 0;
+#X connect 17 0 18 0;
+#X connect 17 0 18 1;
+#X connect 19 0 17 1;
