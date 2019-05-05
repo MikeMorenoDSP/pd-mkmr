@@ -27008,23 +27008,23 @@ empty 0 -8 0 10 -1 -262144 -1 -6 256;
 #X obj 336 228 nbx 5 17 20 20000 0 1 \$0-pic-lop \$0-rcv-pic-lop empty
 0 -8 0 10 -1 -262144 -1 500 256;
 #X obj 336 188 nbx 4 17 0 24 0 1 \$0-snd-pic-gan \$0-rcv-pic-gan empty
-0 -8 0 10 -1 -262144 -1 15 256;
+0 -8 0 10 -1 -262144 -1 12 256;
 #X text 384 189 dB;
 #X text 394 229 Hz;
 #X obj 336 268 nbx 4 17 0 24 0 1 \$0-snd-pic-sym \$0-rcv-pic-sym empty
-0 -8 0 10 -1 -262144 -1 15 256;
+0 -8 0 10 -1 -262144 -1 12 256;
 #X text 334 252 SYMMETRY;
 #X text 384 269 dB;
 #X obj 336 308 nbx 4 17 -100 6 0 1 \$0-snd-pic-lvl \$0-rcv-pic-lvl
-empty 0 -8 0 10 -1 -262144 -1 -6 256;
+empty 0 -8 0 10 -1 -262144 -1 -12 256;
 #X text 334 292 LEVEL;
 #X obj 240 268 nbx 4 17 -100 0 0 1 \$0-snd-ham-lvl \$0-rcv-ham-lvl
-empty 0 -8 0 10 -1 -262144 -1 -30 256;
+empty 0 -8 0 10 -1 -262144 -1 -24 256;
 #X text 288 269 dB;
 #X text 218 269 dB;
 #X text 238 252 HAMMER LEVEL;
 #X obj 240 228 nbx 4 17 -100 0 0 1 \$0-snd-off-lvl \$0-rcv-off-lvl
-empty 0 -8 0 10 -1 -262144 -1 -24 256;
+empty 0 -8 0 10 -1 -262144 -1 -30 256;
 #X text 288 229 dB;
 #X text 238 212 NOTEOFF LEVEL;
 #X obj 20 228 nbx 5 17 20 20000 0 1 \$0-tin-hip \$0-rcv-tin-hip empty
@@ -27038,7 +27038,7 @@ empty 0 -8 0 10 -1 -262144 -1 -24 256;
 0 -8 0 10 -1 -262144 -1 500 256;
 #X text 384 309 dB;
 #X obj 20 308 nbx 4 17 -100 0 0 1 \$0-snd-tin-lvl \$0-rcv-tin-lvl empty
-0 -8 0 10 -1 -262144 -1 -12 256;
+0 -8 0 10 -1 -262144 -1 -26 256;
 #X text 18 292 LEVEL;
 #X text 68 309 dB;
 #X obj 406 188 nbx 4 17 -100 30 0 1 \$0-snd-pic-atk \$0-rcv-pic-atk
@@ -27050,7 +27050,7 @@ empty 0 -8 0 10 -1 -262144 -1 0 256;
 #X text 18 172 RATIO 1;
 #X text 78 172 RATIO 2;
 #X obj 406 308 nbx 4 17 -100 0 0 1 \$0-snd-pic-buz \$0-rcv-pic-buz
-empty 0 -8 0 10 -1 -262144 -1 -9 256;
+empty 0 -8 0 10 -1 -262144 -1 -7 256;
 #X text 454 309 dB;
 #X text 404 292 BUZZ LEVEL;
 #X obj 406 268 tgl 17 1 \$0-snd-buz-pha \$0-rcv-buz-pha empty 17 7
