@@ -1,0 +1,211 @@
+#N canvas 146 23 1017 814 10;
+#X obj 25 12 cnv 15 400 35 empty empty cz-osc~ 20 12 0 14 -4160 -203904
+0;
+#X obj 25 48 cnv 15 400 85 empty empty empty 20 12 0 14 -203904 -66577
+0;
+#X text 452 36 [cz-osc~ oscillator];
+#X text 45 48 Emulates the oscillators from the Casio CZ series. These
+early digital oscillators were based on phase distortion. They attempted
+to emulate filter sweeps by manipulating the phase of a simple cosine
+lookup. While not particularly successful \, they still sounded pretty
+cool.;
+#X obj 70 235 phasor~;
+#X text 127 236 <-- This object is [phasor~]-driven \, like [cos~]
+;
+#X obj 70 180 mtof;
+#X obj 73 154 hsl 128 15 30 100 0 1 empty empty empty -2 -8 0 10 -262144
+-1 -1 7600 1;
+#X floatatom 70 209 0 0 0 0 - - -;
+#X text 465 52 arg1 <optional>: choice of oscillator. Can be either
+float or symbol. (default: 0/saw);
+#X obj 437 407 vradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
+-1 -1 2;
+#X text 454 405 saw;
+#X text 454 421 square;
+#X text 454 436 pulse;
+#X text 454 452 sinepulse;
+#X text 454 466 halfsine;
+#X text 454 482 ressaw;
+#X text 454 497 restriangle;
+#X text 454 513 restrapezoid;
+#X msg 353 365 saw;
+#X msg 353 385 square;
+#X msg 353 405 pulse;
+#X msg 353 425 sinepulse;
+#X msg 353 445 halfsine;
+#X msg 353 465 ressaw;
+#X msg 353 485 restri;
+#X msg 353 505 restrap;
+#X text 327 341 oscillators can be changed using floats or symbols
+;
+#X obj 104 271 hsl 128 15 0 0.99 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X msg 101 454 \$1 100;
+#X obj 101 481 line~;
+#X floatatom 101 431 0 0 0 0 - - -;
+#X text 242 270 modulation for non-res oscillators is in the range
+of 0-.99;
+#X obj 182 309 hsl 128 15 0 65 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X text 321 302 modulation for resonant oscillators are multiples of
+the fundamental;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array \$0-waveform 400 float 0;
+#X coords 0 1 399 -1 200 140 1;
+#X restore 698 412 graph;
+#X obj 266 606 metro 150;
+#X obj 266 577 tgl 15 1 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 250 637 tabwrite~ \$0-waveform;
+#X obj 70 782 dac~;
+#X obj 70 747 *~ 0.25;
+#X floatatom 121 184 5 0 0 0 - - -;
+#X obj 101 342 expr pow($f1 \, 1.0/3);
+#X text 287 576 <-- view waveform;
+#N canvas 94 23 1213 791 series 0;
+#X obj 213 106 phasor~;
+#X obj 213 51 mtof;
+#X obj 216 25 hsl 128 15 30 100 0 1 empty empty empty -2 -8 0 10 -262144
+-1 -1 4899 1;
+#X floatatom 213 80 0 0 0 0 - - -;
+#X obj 576 257 vradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#X text 593 255 saw;
+#X text 593 271 square;
+#X text 593 286 pulse;
+#X text 593 302 sinepulse;
+#X text 593 316 halfsine;
+#X text 593 332 ressaw;
+#X text 593 347 restriangle;
+#X text 593 363 restrapezoid;
+#X obj 429 162 hsl 128 15 0 0.99 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X msg 426 345 \$1 100;
+#X obj 426 372 line~;
+#X floatatom 426 322 0 0 0 0 - - -;
+#X obj 507 200 hsl 128 15 0 65 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X floatatom 264 55 5 0 0 0 - - -;
+#X obj 426 233 expr pow($f1 \, 1.0/3);
+#X text 567 161 non-resonant modulation;
+#X obj 288 202 -~ 0.5;
+#X obj 288 263 *~ 2;
+#X obj 213 203 *~ 2;
+#X obj 43 270 vradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144 -1
+-1 0;
+#X text 60 268 saw;
+#X text 60 284 square;
+#X text 60 299 pulse;
+#X text 60 315 sinepulse;
+#X text 60 329 halfsine;
+#X text 60 345 ressaw;
+#X text 60 360 restriangle;
+#X text 60 376 restrapezoid;
+#X text 350 24 MIDI note;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array \$0-waveform.series 400 float 0;
+#X coords 0 1 399 -1 200 140 1 0 0;
+#X restore 758 352 graph;
+#X obj 356 630 metro 150;
+#X obj 356 601 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 377 600 <-- view waveform;
+#X obj 340 661 tabwrite~ \$0-waveform.series;
+#X obj 281 568 +~;
+#X obj 179 560 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 159 691 send~ \$0-to.dac;
+#X text 51 558 click to listen -->;
+#X obj 173 643 *~ 0;
+#X obj 49 645 == 0;
+#X obj 48 670 s \$0-series.on;
+#X obj 213 153 expr~ ($v1<.5)*$v1 \; ($v1>=.5)*$v1;
+#X obj 288 230 max~ 0;
+#X text 309 80 <-- if the two oscillators are exactly the same \, then
+the fundamental frequency will be twice this;
+#X text 642 198 resonant modulation (note: if both oscillators have
+the same resonant frequency \, as is the case here \, the resonance
+will be twice the fundamental);
+#X obj 714 18 cnv 15 400 120 empty empty empty 20 12 0 14 -203904 -66577
+0;
+#X text 724 22 One of the interesting things about the Casio CZ oscillators
+is that you could run two oscillators in "series". What this meant
+is that one cycle would be the first waveform \, and the next cycle
+would be the second waveform--they would alternate. This subpatch shows
+how to do that. Also \, while the original CZ series didn't allow you
+to use the resonant oscillators in series \, it's not a problem with
+this implemenation.;
+#X obj 175 515 cz-osc~ saw;
+#X obj 424 513 cz-osc~ square;
+#X connect 0 0 46 0;
+#X connect 1 0 3 0;
+#X connect 2 0 1 0;
+#X connect 2 0 18 0;
+#X connect 3 0 0 0;
+#X connect 4 0 53 2;
+#X connect 13 0 19 0;
+#X connect 14 0 15 0;
+#X connect 15 0 52 1;
+#X connect 15 0 53 1;
+#X connect 16 0 14 0;
+#X connect 17 0 16 0;
+#X connect 19 0 16 0;
+#X connect 21 0 47 0;
+#X connect 22 0 53 0;
+#X connect 23 0 52 0;
+#X connect 24 0 52 2;
+#X connect 35 0 38 0;
+#X connect 36 0 35 0;
+#X connect 39 0 38 0;
+#X connect 39 0 43 0;
+#X connect 40 0 43 1;
+#X connect 40 0 44 0;
+#X connect 43 0 41 0;
+#X connect 44 0 45 0;
+#X connect 46 0 23 0;
+#X connect 46 1 21 0;
+#X connect 47 0 22 0;
+#X connect 52 0 39 0;
+#X connect 53 0 39 1;
+#X restore 700 204 pd series;
+#X obj 70 691 *~ 1;
+#X obj 91 670 r \$0-series.on;
+#X obj 97 718 receive~ \$0-to.dac;
+#X text 698 169 More;
+#X text 697 182 -------------------;
+#X obj 266 147 loadbang;
+#X msg 266 168 44100 64;
+#X obj 266 189 /;
+#X obj 70 549 cz-osc~ saw;
+#X connect 4 0 53 0;
+#X connect 6 0 8 0;
+#X connect 7 0 6 0;
+#X connect 7 0 41 0;
+#X connect 8 0 4 0;
+#X connect 10 0 53 2;
+#X connect 19 0 53 2;
+#X connect 20 0 53 2;
+#X connect 21 0 53 2;
+#X connect 22 0 53 2;
+#X connect 23 0 53 2;
+#X connect 24 0 53 2;
+#X connect 25 0 53 2;
+#X connect 26 0 53 2;
+#X connect 28 0 42 0;
+#X connect 29 0 30 0;
+#X connect 30 0 53 1;
+#X connect 31 0 29 0;
+#X connect 33 0 31 0;
+#X connect 36 0 38 0;
+#X connect 37 0 36 0;
+#X connect 40 0 39 0;
+#X connect 40 0 39 1;
+#X connect 42 0 31 0;
+#X connect 45 0 40 0;
+#X connect 46 0 45 1;
+#X connect 47 0 40 0;
+#X connect 50 0 51 0;
+#X connect 51 0 52 0;
+#X connect 52 0 8 0;
+#X connect 53 0 38 0;
+#X connect 53 0 45 0;
