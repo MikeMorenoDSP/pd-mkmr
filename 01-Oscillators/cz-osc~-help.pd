@@ -1,4 +1,4 @@
-#N canvas 146 23 1017 814 10;
+#N canvas 903 120 1017 814 10;
 #X obj 25 12 cnv 15 400 35 empty empty cz-osc~ 20 12 0 14 -4160 -203904
 0;
 #X obj 25 48 cnv 15 400 85 empty empty empty 20 12 0 14 -203904 -66577
@@ -14,12 +14,12 @@ cool.;
 ;
 #X obj 70 180 mtof;
 #X obj 73 154 hsl 128 15 30 100 0 1 empty empty empty -2 -8 0 10 -262144
--1 -1 7600 1;
+-1 -1 2700 1;
 #X floatatom 70 209 0 0 0 0 - - -;
 #X text 465 52 arg1 <optional>: choice of oscillator. Can be either
 float or symbol. (default: 0/saw);
 #X obj 437 407 vradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
--1 -1 2;
+-1 -1 5;
 #X text 454 405 saw;
 #X text 454 421 square;
 #X text 454 436 pulse;
@@ -31,7 +31,7 @@ float or symbol. (default: 0/saw);
 #X msg 353 365 saw;
 #X msg 353 385 square;
 #X msg 353 405 pulse;
-#X msg 353 425 sinepulse;
+#X msg 360 431 sinepulse;
 #X msg 353 445 halfsine;
 #X msg 353 465 ressaw;
 #X msg 353 485 restri;
@@ -45,7 +45,7 @@ float or symbol. (default: 0/saw);
 #X floatatom 101 431 0 0 0 0 - - -;
 #X text 242 270 modulation for non-res oscillators is in the range
 of 0-.99;
-#X obj 182 309 hsl 128 15 0 65 0 0 empty empty empty -2 -8 0 10 -262144
+#X obj 261 317 hsl 128 15 0 65 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 1;
 #X text 321 302 modulation for resonant oscillators are multiples of
 the fundamental;
@@ -57,8 +57,6 @@ the fundamental;
 #X obj 266 577 tgl 15 1 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 250 637 tabwrite~ \$0-waveform;
-#X obj 70 782 dac~;
-#X obj 70 747 *~ 0.25;
 #X floatatom 121 184 5 0 0 0 - - -;
 #X obj 101 342 expr pow($f1 \, 1.0/3);
 #X text 287 576 <-- view waveform;
@@ -177,35 +175,43 @@ this implemenation.;
 #X msg 266 168 44100 64;
 #X obj 266 189 /;
 #X obj 70 549 cz-osc~ saw;
-#X connect 4 0 53 0;
+#X obj 485 127 notein;
+#X obj 485 148 poly 1 1;
+#X obj 414 185 mtof;
+#X obj 70 747 *~ 0.04;
+#X obj 70 768 dac~ 1 2;
+#X connect 4 0 51 0;
 #X connect 6 0 8 0;
 #X connect 7 0 6 0;
-#X connect 7 0 41 0;
+#X connect 7 0 39 0;
 #X connect 8 0 4 0;
-#X connect 10 0 53 2;
-#X connect 19 0 53 2;
-#X connect 20 0 53 2;
-#X connect 21 0 53 2;
-#X connect 22 0 53 2;
-#X connect 23 0 53 2;
-#X connect 24 0 53 2;
-#X connect 25 0 53 2;
-#X connect 26 0 53 2;
-#X connect 28 0 42 0;
+#X connect 10 0 51 2;
+#X connect 19 0 51 2;
+#X connect 20 0 51 2;
+#X connect 21 0 51 2;
+#X connect 22 0 51 2;
+#X connect 23 0 51 2;
+#X connect 24 0 51 2;
+#X connect 25 0 51 2;
+#X connect 26 0 51 2;
+#X connect 28 0 40 0;
 #X connect 29 0 30 0;
-#X connect 30 0 53 1;
+#X connect 30 0 51 1;
 #X connect 31 0 29 0;
 #X connect 33 0 31 0;
 #X connect 36 0 38 0;
 #X connect 37 0 36 0;
-#X connect 40 0 39 0;
-#X connect 40 0 39 1;
-#X connect 42 0 31 0;
-#X connect 45 0 40 0;
-#X connect 46 0 45 1;
-#X connect 47 0 40 0;
-#X connect 50 0 51 0;
-#X connect 51 0 52 0;
-#X connect 52 0 8 0;
-#X connect 53 0 38 0;
-#X connect 53 0 45 0;
+#X connect 40 0 31 0;
+#X connect 43 0 38 0;
+#X connect 44 0 43 1;
+#X connect 45 0 55 0;
+#X connect 48 0 49 0;
+#X connect 49 0 50 0;
+#X connect 50 0 8 0;
+#X connect 51 0 43 0;
+#X connect 52 0 53 0;
+#X connect 52 1 53 1;
+#X connect 53 1 54 0;
+#X connect 54 0 8 0;
+#X connect 55 0 56 0;
+#X connect 55 0 56 1;
