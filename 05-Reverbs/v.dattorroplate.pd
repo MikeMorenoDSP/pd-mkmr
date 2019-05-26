@@ -410,6 +410,7 @@
 #X text 374 67 from http://tre.ucsd.edu/wordpress/?p=285;
 #X text 507 218 https://github.com/MikeMorenoAudio;
 #X text 507 198 Made heavy compatible by Mike Moreno;
+#X text 374 47 By Tom Erbe;
 #X connect 0 0 61 0;
 #X connect 2 0 71 0;
 #X connect 3 0 102 0;

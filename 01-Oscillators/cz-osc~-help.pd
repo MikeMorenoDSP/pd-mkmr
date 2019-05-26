@@ -14,12 +14,12 @@ cool.;
 ;
 #X obj 70 180 mtof;
 #X obj 73 154 hsl 128 15 30 100 0 1 empty empty empty -2 -8 0 10 -262144
--1 -1 5100 1;
+-1 -1 12700 1;
 #X floatatom 70 209 0 0 0 0 - - -;
 #X text 465 52 arg1 <optional>: choice of oscillator. Can be either
 float or symbol. (default: 0/saw);
 #X obj 437 407 vradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
--1 -1 0;
+-1 -1 1;
 #X text 454 405 saw;
 #X text 454 421 square;
 #X text 454 436 pulse;
@@ -39,10 +39,10 @@ float or symbol. (default: 0/saw);
 #X text 327 341 oscillators can be changed using floats or symbols
 ;
 #X obj 104 271 hsl 128 15 0 0.99 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 0 1;
-#X msg 101 454 \$1 100;
-#X obj 101 481 line~;
-#X floatatom 101 431 0 0 0 0 - - -;
+-1 -1 10000 1;
+#X msg 101 394 \$1 100;
+#X obj 101 421 line~;
+#X floatatom 101 371 0 0 0 0 - - -;
 #X text 242 270 modulation for non-res oscillators is in the range
 of 0-.99;
 #X obj 261 317 hsl 128 15 0 32 0 0 empty empty empty -2 -8 0 10 -262144
@@ -77,12 +77,12 @@ the fundamental;
 #X text 593 347 restriangle;
 #X text 593 363 restrapezoid;
 #X obj 429 162 hsl 128 15 0 0.99 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 8100 1;
+-1 -1 0 1;
 #X msg 426 345 \$1 100;
 #X obj 426 372 line~;
 #X floatatom 426 322 0 0 0 0 - - -;
 #X obj 507 200 hsl 128 15 0 65 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 4800 1;
+-1 -1 0 1;
 #X floatatom 264 55 5 0 0 0 - - -;
 #X obj 426 233 expr pow($f1 \, 1.0/3);
 #X text 567 161 non-resonant modulation;
@@ -105,12 +105,12 @@ the fundamental;
 #X coords 0 1 399 -1 200 140 1 0 0;
 #X restore 758 352 graph;
 #X obj 356 630 metro 150;
-#X obj 356 601 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 356 601 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X text 377 600 <-- view waveform;
 #X obj 340 661 tabwrite~ \$0-waveform.series;
 #X obj 281 568 +~;
-#X obj 179 560 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 179 560 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 159 691 send~ \$0-to.dac;
 #X text 51 558 click to listen -->;
@@ -174,7 +174,7 @@ this implemenation.;
 #X obj 266 147 loadbang;
 #X msg 266 168 44100 64;
 #X obj 266 189 /;
-#X obj 70 549 cz-osc~ saw;
+#X obj 70 439 cz-osc~ saw;
 #X obj 485 127 notein;
 #X obj 485 148 poly 1 1;
 #X obj 414 185 mtof;
@@ -182,7 +182,6 @@ this implemenation.;
 #X obj 70 747 *~ 0.1;
 #X connect 4 0 51 0;
 #X connect 6 0 8 0;
-#X connect 7 0 6 0;
 #X connect 7 0 39 0;
 #X connect 8 0 4 0;
 #X connect 10 0 51 2;
@@ -201,6 +200,7 @@ this implemenation.;
 #X connect 33 0 31 0;
 #X connect 36 0 38 0;
 #X connect 37 0 36 0;
+#X connect 39 0 6 0;
 #X connect 40 0 31 0;
 #X connect 43 0 38 0;
 #X connect 43 0 56 0;
@@ -209,7 +209,6 @@ this implemenation.;
 #X connect 48 0 49 0;
 #X connect 49 0 50 0;
 #X connect 50 0 8 0;
-#X connect 51 0 43 0;
 #X connect 52 0 53 0;
 #X connect 52 1 53 1;
 #X connect 53 1 54 0;
