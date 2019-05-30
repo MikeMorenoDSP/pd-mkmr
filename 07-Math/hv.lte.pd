@@ -9,7 +9,7 @@
 #X connect 1 0 2 0;
 #X restore 45 105 pd @hv_obj __and~f;
 #X obj 150 83 sig~ 1;
-#N canvas 715 101 191 233 @hv_obj 1;
+#N canvas 715 101 191 233 @hv_obj 0;
 #X obj 49 83 -~;
 #X obj 50 109 clip~ -1e-37 0;
 #X obj 49 32 inlet~;
