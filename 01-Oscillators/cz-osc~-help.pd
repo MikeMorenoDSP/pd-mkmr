@@ -13,17 +13,16 @@ cool.;
 ;
 #X obj 70 180 mtof;
 #X obj 73 154 hsl 128 15 30 100 0 1 empty empty empty -2 -8 0 10 -262144
--1 -1 6600 1;
+-1 -1 12700 1;
 #X floatatom 70 209 0 0 0 0 - - -;
 #X text 465 52 arg1 <optional>: choice of oscillator. Can be either
 float or symbol. (default: 0/saw);
 #X text 327 341 oscillators can be changed using floats or symbols
 ;
-#X obj 104 389 hsl 128 15 0 0.99 0 0 empty empty empty -2 -8 0 10 -262144
+#X obj 104 389 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 1;
 #X msg 101 450 \$1 100;
 #X obj 101 471 line~;
-#X floatatom 101 429 0 0 0 0 - - -;
 #X text 242 270 modulation for non-res oscillators is in the range
 of 0-.99;
 #X text 321 302 modulation for resonant oscillators are multiples of
@@ -37,7 +36,6 @@ the fundamental;
 1;
 #X obj 250 637 tabwrite~ \$0-waveform;
 #X floatatom 121 184 5 0 0 0 - - -;
-#X obj 101 409 expr pow($f1 \, 1.0/3);
 #X text 287 576 <-- view waveform;
 #N canvas 67 23 1213 755 series 0;
 #X obj 213 106 phasor~;
@@ -159,40 +157,44 @@ this implemenation.;
 #X obj 414 185 mtof;
 #X obj 70 768 dac~ 1 2;
 #X obj 70 747 *~ 0.1;
-#X obj 274 406 vradio 11 1 0 8 empty empty empty 0 -8 0 10 -262144
--1 -1 0;
+#X obj 274 406 vradio 11 1 1 8 empty empty empty 0 -8 0 10 -262144
+-1 -1 5;
 #X text 288 403 saw \; square \; pulse \; sinepulse \; halfpulse \;
 res-saw \; res-triangle \; res-trapezoid \;;
-#X obj 404 406 vradio 11 1 0 8 empty empty empty 0 -8 0 10 -262144
--1 -1 5;
+#X obj 404 406 vradio 11 1 1 8 empty empty empty 0 -8 0 10 -262144
+-1 -1 6;
 #X text 418 403 saw \; square \; pulse \; sinepulse \; halfpulse \;
 res-saw \; res-triangle \; res-trapezoid \;;
 #X floatatom 274 499 5 0 0 0 - - -;
+#X obj 266 306 vradio 11 1 1 8 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#X text 280 303 saw \; square \; pulse \; sinepulse \; halfpulse \;
+res-saw \; res-triangle \; res-trapezoid \;;
 #X connect 5 0 7 0;
-#X connect 6 0 20 0;
-#X connect 7 0 32 0;
-#X connect 10 0 21 0;
+#X connect 6 0 19 0;
+#X connect 7 0 30 0;
+#X connect 10 0 11 0;
 #X connect 11 0 12 0;
-#X connect 12 0 32 1;
-#X connect 13 0 11 0;
-#X connect 17 0 19 0;
-#X connect 18 0 17 0;
-#X connect 20 0 5 0;
-#X connect 21 0 13 0;
-#X connect 24 0 37 0;
-#X connect 24 0 19 0;
-#X connect 25 0 24 1;
-#X connect 26 0 37 0;
-#X connect 29 0 30 0;
-#X connect 30 0 31 0;
-#X connect 31 0 7 0;
-#X connect 32 0 24 0;
-#X connect 33 0 34 0;
-#X connect 33 1 34 1;
-#X connect 34 1 35 0;
-#X connect 35 0 7 0;
-#X connect 37 0 36 0;
-#X connect 37 0 36 1;
-#X connect 38 0 32 2;
-#X connect 38 0 42 0;
-#X connect 40 0 32 3;
+#X connect 12 0 30 1;
+#X connect 16 0 18 0;
+#X connect 17 0 16 0;
+#X connect 19 0 5 0;
+#X connect 22 0 35 0;
+#X connect 23 0 22 1;
+#X connect 24 0 35 0;
+#X connect 27 0 28 0;
+#X connect 28 0 29 0;
+#X connect 29 0 7 0;
+#X connect 30 0 22 0;
+#X connect 30 0 18 0;
+#X connect 31 0 32 0;
+#X connect 31 1 32 1;
+#X connect 32 1 33 0;
+#X connect 33 0 7 0;
+#X connect 35 0 34 0;
+#X connect 35 0 34 1;
+#X connect 36 0 30 2;
+#X connect 36 0 40 0;
+#X connect 38 0 30 3;
+#X connect 41 0 36 0;
+#X connect 41 0 38 0;
