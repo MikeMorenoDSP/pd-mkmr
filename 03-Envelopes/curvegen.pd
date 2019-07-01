@@ -51,9 +51,9 @@
 #X obj 198 279 outlet;
 #X text 198 299 //x value;
 #X text 201 565 //y value;
-#X text 188 107 //Reset table;
 #X text 134 11 //List (value \, time \, curve);
 #X obj 64 140 max 2;
+#X text 188 107 //Reset Counter;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
@@ -85,7 +85,7 @@
 #X connect 24 1 14 0;
 #X connect 25 0 18 0;
 #X connect 26 0 44 0;
-#X connect 27 0 54 0;
+#X connect 27 0 53 0;
 #X connect 28 0 40 0;
 #X connect 29 0 26 0;
 #X connect 29 1 24 0;
@@ -122,5 +122,5 @@
 #X connect 45 0 46 0;
 #X connect 46 0 29 0;
 #X connect 47 0 37 0;
-#X connect 54 0 30 0;
+#X connect 53 0 30 0;
 #X coords 0 605 1 604 220 101 0;
