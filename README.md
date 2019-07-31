@@ -1,4 +1,4 @@
-# vanillalib
+# pd-mkmr
 A compilation of vanilla made abstractions.
 
 Most of them are Heavy compatible, meaning objects like [expr~] and [vline~] are replaced by alternatives.
@@ -11,6 +11,6 @@ For example, you could copy and paste several instances of [rlpf~] into subpatch
 * Enzien Audio - heavylib library (https://github.com/enzienaudio/heavylib)
 * Mike Moser-Booth - mmb library (https://github.com/dotmmb/mmb)
 * Tom Erbe - reverb in PD (http://tre.ucsd.edu/wordpress/?p=285)
-* Katja Vetter - vanilla freeverb
+* Katja Vetter - vanilla freeverb (https://forum.pdpatchrepo.info/topic/6247/freeverb-in-vanilla-pd)
 * State Variable Filter (https://dsp.stackexchange.com/questions/41113/)
-* Vadim Zavalishin - The Art of VA ilter design (http://www.discodsp.net/VAFilterDesign_1.1.1.pdf)
+* Vadim Zavalishin - The Art of VA filter design (http://www.discodsp.net/VAFilterDesign_1.1.1.pdf)
