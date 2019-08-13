@@ -43,6 +43,7 @@ produce concave increases and convex decays.;
 CPU usage \, but it's not heavy compatible.;
 #X msg 12 209 1 250 \$1 \, 0.5 250 \$1 250 \, 0 250 \$1 750;
 #X text 355 204 inlet 1: bang;
+#X text 365 224 1) Clear messages;
 #X connect 2 0 3 0;
 #X connect 2 0 11 0;
 #X connect 8 0 1 0;
