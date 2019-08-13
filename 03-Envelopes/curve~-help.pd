@@ -7,10 +7,10 @@
 #X obj 12 138 bng 17 250 50 0 empty empty PLOT 0 -9 0 10 -262144 -1
 -1;
 #X obj 32 165 s \$0-trg-env;
-#X text 365 169 1) Destination Value;
-#X text 355 149 inlet 0: list;
-#X text 365 184 2) Time (ms);
-#X text 365 199 3) Curve Factor (bipolar);
+#X text 365 139 1) Destination Value;
+#X text 355 119 inlet 0: list;
+#X text 365 154 2) Time (ms);
+#X text 365 169 3) Curve Factor (bipolar);
 #X obj 125 228 r \$0-trg-env;
 #X text 145 329 https://github.com/dotmmb/mmb;
 #X text 145 309 Mike Moser-Booth;
@@ -21,7 +21,7 @@
 #X msg 218 158 -3;
 #X text 145 289 Based on the [curve.mmb~] object from the mmb library
 ;
-#X text 365 214 4) Delay (ms);
+#X text 365 184 4) Delay (ms);
 #X text 145 379 https://github.com/MikeMorenoAudio;
 #X text 145 359 Made heavy compatible by Mike Moreno;
 #X obj 12 307 *~;
@@ -42,6 +42,7 @@ produce concave increases and convex decays.;
 #X text 10 91 [curve~] replaces some objects from [hv.curve~] to reduce
 CPU usage \, but it's not heavy compatible.;
 #X msg 12 209 1 250 \$1 \, 0.5 250 \$1 250 \, 0 250 \$1 750;
+#X text 355 204 inlet 1: bang;
 #X connect 2 0 3 0;
 #X connect 2 0 11 0;
 #X connect 8 0 1 0;
