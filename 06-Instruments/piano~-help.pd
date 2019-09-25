@@ -1,4 +1,4 @@
-#N canvas 761 85 1043 973 10;
+#N canvas 0 23 1043 973 10;
 #X obj 485 32 r \$0-poly;
 #X obj 277 420 expr~ tanh($v1);
 #X obj 277 441 hip~ 3;
