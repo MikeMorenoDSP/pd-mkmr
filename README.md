@@ -5,7 +5,7 @@ Most of them are Heavy compatible, meaning objects like [expr~] and [vline~] are
 
 Also, abstractions and variables are kept to minimum in order to copy and paste these abstractions as subpatches.
 
-For example, you could copy and paste several instances of [rlpf~] into subpatches without needing to save it as an abstraction.
+For example, you could copy and paste several instances of [lowpass~] into subpatches without needing to save it as an abstraction.
 
 ### References:
 * Enzien Audio - heavylib library (https://github.com/enzienaudio/heavylib)
