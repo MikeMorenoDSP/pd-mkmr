@@ -138,8 +138,8 @@
 #X text 12 52 Input;
 #X text 12 149 Output;
 #X text 184 51 Reinitialize internal state;
-#X text 167 11 Q;
-#X text 62 11 Frequency;
+#X text 62 11 Frequency(Hz);
+#X text 167 11 Resonance(Q);
 #X connect 0 0 4 0;
 #X connect 1 0 0 0;
 #X connect 2 0 0 0;
