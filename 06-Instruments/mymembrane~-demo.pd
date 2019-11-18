@@ -47,15 +47,15 @@
 #X obj 112 101 notein;
 #X obj 112 335 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 157 206 vsl 15 128 0 127 0 0 empty empty VELOCITY 0 -9 0 10
--262144 -1 -1 7900 1;
+#X obj 157 206 vsl 15 127 1 127 0 1 empty empty VELOCITY 0 -9 0 10
+-262144 -1 -1 10300 1;
 #X obj 112 355 i;
 #X floatatom 157 342 5 0 0 0 - - -;
 #X obj 112 190 t b f;
 #X obj 112 164 sel 0;
 #X obj 112 143 route 36;
 #X obj 12 67 tgl 15 0 empty empty PLAY-RHYTHM 17 7 0 10 -262144 -1
--1 0 1;
+-1 1 1;
 #X obj 12 108 i;
 #X obj 42 108 + 1;
 #X obj 32 283 sel 1;
@@ -94,8 +94,8 @@
 #X obj 412 101 notein;
 #X obj 412 335 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 457 206 vsl 15 128 0 127 0 0 empty empty VELOCITY 0 -9 0 10
--262144 -1 -1 10100 1;
+#X obj 457 206 vsl 15 127 1 127 0 1 empty empty VELOCITY 0 -9 0 10
+-262144 -1 -1 4500 1;
 #X obj 412 355 i;
 #X floatatom 457 342 5 0 0 0 - - -;
 #X obj 412 190 t b f;
@@ -136,8 +136,8 @@
 #X obj 712 101 notein;
 #X obj 712 335 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 757 206 vsl 15 128 0 127 0 0 empty empty VELOCITY 0 -9 0 10
--262144 -1 -1 10000 1;
+#X obj 757 206 vsl 15 127 1 127 0 1 empty empty VELOCITY 0 -9 0 10
+-262144 -1 -1 9300 1;
 #X obj 712 355 i;
 #X floatatom 757 342 5 0 0 0 - - -;
 #X obj 712 190 t b f;
@@ -173,8 +173,8 @@
 #X obj 1012 101 notein;
 #X obj 1012 335 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 1057 206 vsl 15 128 0 127 0 0 empty empty VELOCITY 0 -9 0 10
--262144 -1 -1 11400 1;
+#X obj 1057 206 vsl 15 127 1 127 0 1 empty empty VELOCITY 0 -9 0 10
+-262144 -1 -1 7400 1;
 #X obj 1012 355 i;
 #X floatatom 1057 342 5 0 0 0 - - -;
 #X obj 1012 190 t b f;
@@ -196,16 +196,16 @@
 #X obj 712 143 route 38;
 #X obj 1012 143 route 39;
 #X obj 32 346 spigot;
-#X obj 65 326 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 75 326 tgl 15 1 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 332 346 spigot;
-#X obj 365 326 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 375 326 tgl 15 1 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 632 346 spigot;
-#X obj 665 326 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 675 326 tgl 15 1 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 932 346 spigot;
-#X obj 965 326 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 975 326 tgl 15 1 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X text 521 41 ░░░░░░░░░░░░░┌┐░░░░░░░░░░░
 \; ┌──┬┬┬──┬─┬──┤└┬┬┬─┐┌─┬┬─┐
