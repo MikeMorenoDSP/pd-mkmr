@@ -1,9 +1,9 @@
-#N struct 1225-dial float p1x float p1y float p2x float p2y float c1
-float c2 float px float py float c float c3 float c4 float w1 float
-w2 float w3 float g float g2 float wc float wlc float wlw;
-#N struct 1223-dial float p1x float p1y float p2x float p2y float c1
-float c2 float px float py float c float c3 float c4 float w1 float
-w2 float w3 float g float g2 float wc float wlc float wlw;
+#N struct 1187-dial float p1x float p1y float p2x float p2y float c1
+float px float py float c float c3 float c4 float w1 float w2 float
+w3 float g float g2 float wc float wlc float wlw;
+#N struct 1188-dial float p1x float p1y float p2x float p2y float c1
+float px float py float c float c3 float c4 float w1 float w2 float
+w3 float g float g2 float wc float wlc float wlw;
 #N canvas 364 73 1210 775 10;
 #X floatatom 56 309 5 0 0 0 - - -;
 #X obj 56 39 r params;
@@ -57,7 +57,7 @@ nsize 75 \, ncent 0 \, marks 1 \, gap 0 \, 0;
 #X msg 694 256 size 50 \, min \, max \, ccol 253 \, ncol 90 \, fcol
 32 \, bgcol 32 \, bxcol 32 \, nwide 7 \, cbwide 7 \, bbwide 11 \, nsize
 90 \, ncent 85 \, marks 0 \, gap 0 \, 0;
-#X obj 626 573 gridknob-wip;
+#X obj 572 582 gridknob-wip;
 #X floatatom 225 488 5 0 999 0 - - -;
 #X msg 266 485 wcol \$1;
 #X floatatom 225 515 5 0 999 0 - - -;
@@ -129,11 +129,10 @@ width 1-20;
 #X connect 37 0 36 0;
 #X connect 38 0 2 0;
 #X connect 39 0 40 0;
-#X connect 40 0 31 0;
 #X connect 41 0 42 0;
 #X connect 42 0 2 0;
 #X connect 43 0 53 0;
-#X connect 45 0 0 0;
+#X connect 44 0 40 0;
 #X connect 46 0 40 0;
 #X connect 47 0 40 0;
 #X connect 48 0 40 0;
