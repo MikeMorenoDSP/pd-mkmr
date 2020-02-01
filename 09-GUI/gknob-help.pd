@@ -1,0 +1,17 @@
+#N struct 1394-dial float p1x float p1y float p2x float p2y float c1
+float px float py float c float c3 float c4 float w1 float w2;
+#N struct 1395-dial float p1x float p1y float p2x float p2y float c1
+float px float py float c float c3 float c4 float w1 float w2;
+#N struct 1311-dial float p1x float p1y float p2x float p2y float c1
+float px float py float c float c3 float c4 float w1 float w2;
+#N struct 1396-dial float p1x float p1y float p2x float p2y float c1
+float px float py float c float c3 float c4 float w1 float w2;
+#N canvas 710 136 1210 775 10;
+#X obj 211 254 gknob 50;
+#A saved 0 50 0 0;
+#X obj 260 254 gknob 100;
+#A saved 0 100 0 0;
+#X obj 111 303 gknob 150;
+#A saved 44 150 0 0;
+#X obj 262 355 gknob 25;
+#A saved 0 25 0 0;
