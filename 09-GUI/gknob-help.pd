@@ -1,17 +1,28 @@
-#N struct 1394-dial float p1x float p1y float p2x float p2y float c1
-float px float py float c float c3 float c4 float w1 float w2;
-#N struct 1395-dial float p1x float p1y float p2x float p2y float c1
-float px float py float c float c3 float c4 float w1 float w2;
-#N struct 1311-dial float p1x float p1y float p2x float p2y float c1
-float px float py float c float c3 float c4 float w1 float w2;
-#N struct 1396-dial float p1x float p1y float p2x float p2y float c1
-float px float py float c float c3 float c4 float w1 float w2;
+#N struct 1683-dial float p1x float p1y float p2x float p2y float c1
+float px float py float c2 float c3 float c4 float w1 float w2;
+#N struct 1684-dial float p1x float p1y float p2x float p2y float c1
+float px float py float c2 float c3 float c4 float w1 float w2;
+#N struct 1682-dial float p1x float p1y float p2x float p2y float c1
+float px float py float c2 float c3 float c4 float w1 float w2;
+#N struct 1685-dial float p1x float p1y float p2x float p2y float c1
+float px float py float c2 float c3 float c4 float w1 float w2;
 #N canvas 710 136 1210 775 10;
-#X obj 211 254 gknob 50;
-#A saved 0 50 0 0;
-#X obj 260 254 gknob 100;
-#A saved 0 100 0 0;
-#X obj 111 303 gknob 150;
-#A saved 44 150 0 0;
-#X obj 262 355 gknob 25;
-#A saved 0 25 0 0;
+#X obj 280 462 cnv 15 100 60 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X msg 281 335 size 200;
+#X msg 392 400 color 999 999 0 0;
+#X msg 945 362 color 0 0 999 999;
+#X obj 594 258 gknob 250;
+#A saved 34 250 1000 1000 1 1;
+#X obj 911 419 gknob 50;
+#A saved 44 50 1 1 1000 1000;
+#X floatatom 594 513 5 0 0 0 - - -;
+#X floatatom 911 474 5 0 0 0 - - -;
+#X obj 420 570 gknob;
+#A saved 0 50 0 0 0 0;
+#X obj 584 583 gknob;
+#A saved 92 50 0 0 0 0;
+#X connect 2 0 4 0;
+#X connect 3 0 5 0;
+#X connect 4 0 6 0;
+#X connect 5 0 7 0;
