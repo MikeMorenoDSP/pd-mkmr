@@ -1,27 +1,14 @@
-#N struct 1766-dial float p1x float p1y float p2x float p2y float c1
+#N struct 1033-dial float p1x float p1y float p2x float p2y float c1
 float px float py float c2 float c3 float c4 float w1 float w2;
-#N struct 1767-dial float p1x float p1y float p2x float p2y float c1
+#N struct 1034-dial float p1x float p1y float p2x float p2y float c1
 float px float py float c2 float c3 float c4 float w1 float w2;
-#N struct 1768-dial float p1x float p1y float p2x float p2y float c1
+#N struct 1035-dial float p1x float p1y float p2x float p2y float c1
 float px float py float c2 float c3 float c4 float w1 float w2;
-#N struct 1769-dial float p1x float p1y float p2x float p2y float c1
+#N struct 1036-dial float p1x float p1y float p2x float p2y float c1
 float px float py float c2 float c3 float c4 float w1 float w2;
-#N struct 1770-dial float p1x float p1y float p2x float p2y float c1
-float px float py float c2 float c3 float c4 float w1 float w2;
-#N canvas 710 136 1210 775 10;
-#X msg 945 362 color 0 0 999 999;
-#X obj 594 258 gknob 250;
-#A saved 94 75 801 801 1 1 5;
-#X obj 911 419 gknob 50;
-#A saved 44 50 1 1 1000 1000 0;
-#X floatatom 594 513 5 0 0 0 - - -;
-#X floatatom 911 474 5 0 0 0 - - -;
-#X obj 420 570 gknob;
-#A saved 0 50 0 0 0 0 0;
-#X obj 584 583 gknob;
-#A saved 92 50 0 0 0 0 0;
-#X obj 193 512 gknob 100;
-#A saved 113 100 0 0 0 0 0;
+#N canvas 169 238 771 288 10;
+#X obj 411 187 gknob 250;
+#A saved 40 75 801 801 1000 1000 5;
 #N canvas 0 23 195 247 RGB 0;
 #X obj 17 34 / 255;
 #X obj 17 56 * 8;
@@ -68,25 +55,32 @@ float px float py float c2 float c3 float c4 float w1 float w2;
 #X connect 19 0 0 0;
 #X connect 20 0 4 0;
 #X connect 21 0 8 0;
-#X restore 405 219 pd RGB;
-#X obj 405 109 vsl 16 101 0 255 0 0 empty empty RED 0 -9 0 10 -258113
+#X restore 242 129 pd RGB;
+#X obj 242 19 vsl 16 101 0 255 0 0 empty empty RED 0 -9 0 10 -258113
 -1 -1 0 1;
-#X obj 445 109 vsl 16 101 0 255 0 0 empty empty GREEN 0 -9 0 10 -4034
+#X obj 282 19 vsl 16 101 0 255 0 0 empty empty GREEN 0 -9 0 10 -4034
 -1 -1 0 1;
-#X obj 485 109 vsl 16 101 0 255 0 0 empty empty BLUE 0 -9 0 10 -4160
+#X obj 322 19 vsl 16 101 0 255 0 0 empty empty BLUE 0 -9 0 10 -4160
 -262144 -1 0 1;
-#X msg 405 241 color \$1 \$1 0 0;
-#X floatatom 624 136 5 0 0 0 - - -;
-#X msg 624 156 width \$1;
-#X msg 740 141 size 75;
-#X connect 0 0 2 0;
-#X connect 1 0 3 0;
-#X connect 2 0 4 0;
-#X connect 8 0 12 0;
-#X connect 9 0 8 0;
-#X connect 10 0 8 1;
-#X connect 11 0 8 2;
-#X connect 12 0 1 0;
-#X connect 13 0 14 0;
-#X connect 14 0 1 0;
-#X connect 15 0 1 0;
+#X floatatom 411 125 5 0 0 0 - - -;
+#X msg 411 145 width \$1;
+#X msg 471 145 size 75;
+#X obj 14 175 gknob 100;
+#A saved 0 100 0 0 0 0 0;
+#X obj 114 200 gknob 75;
+#A saved 0 75 0 0 0 0 0;
+#X obj 190 224 gknob 50;
+#A saved 0 50 0 0 0 0 0;
+#X msg 242 171 color \$1 \$1 999 999;
+#X floatatom 242 150 0 0 0 0 - - -;
+#X text 387 27 GridKnob mod from https://forum.pdpatchrepo.info/topic/10838/no-mouse-external-some-success
+;
+#X connect 1 0 12 0;
+#X connect 2 0 1 0;
+#X connect 3 0 1 1;
+#X connect 4 0 1 2;
+#X connect 5 0 6 0;
+#X connect 6 0 0 0;
+#X connect 7 0 0 0;
+#X connect 11 0 0 0;
+#X connect 12 0 11 0;

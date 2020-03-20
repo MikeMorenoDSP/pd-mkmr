@@ -1,4 +1,4 @@
-#N struct 1738-dial float p1x float p1y float p2x float p2y float c1
+#N struct 1031-dial float p1x float p1y float p2x float p2y float c1
 float px float py float c2 float c3 float c4 float w1 float w2;
 #N canvas 523 59 1397 885 10;
 #X obj 302 115 f \$0;
@@ -216,9 +216,9 @@ py(-100:100)(76.1737:76.1737) px(-100:100)(-28.1861:-28.1861) py(-100:100)(78.24
 0 \, dirty 0;
 #X obj 302 73 namecanvas \$0-base;
 #N canvas 0 50 450 707 \$0-graph 0;
-#X scalar 1738-dial -37.3615 -69.9352 1.51998 1.12274 800 36 48 800
-0 0 4 0 \;;
-#X coords -100 -100 100 100 75 75 2 0 0;
+#X scalar 1031-dial -28.1862 78.2417 1.63188 2.92978 0 0 0 0 999 999
+4 0 \;;
+#X coords -100 -100 100 100 50 50 2 0 0;
 #X restore 10 10 pd \$0-graph;
 #X obj 513 357 t f f;
 #X obj 622 420 f;
@@ -418,6 +418,8 @@ w2, f 67;
 #X obj 757 54 s \$0-wid;
 #X floatatom 845 64 5 0 0 0 - - -;
 #X obj 55 719 pack f f f f f;
+#X text 73 394 GridKnob mod from https://forum.pdpatchrepo.info/topic/10838/no-mouse-external-some-success
+;
 #X connect 0 0 13 0;
 #X connect 1 0 0 0;
 #X connect 3 0 4 0;
@@ -581,4 +583,4 @@ w2, f 67;
 #X connect 145 1 141 0;
 #X connect 146 0 144 0;
 #X connect 149 0 98 0;
-#X coords -100 -100 100 100 75 75 2 10 10;
+#X coords -100 -100 100 100 50 50 2 10 10;
