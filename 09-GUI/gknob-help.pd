@@ -1,14 +1,14 @@
-#N struct 1038-dial float p1x float p1y float p2x float p2y float c1
+#N struct 1043-dial float p1x float p1y float p2x float p2y float c1
 float px float py float c2 float c3 float c4 float w1 float w2;
-#N struct 1039-dial float p1x float p1y float p2x float p2y float c1
+#N struct 1044-dial float p1x float p1y float p2x float p2y float c1
 float px float py float c2 float c3 float c4 float w1 float w2;
-#N struct 1040-dial float p1x float p1y float p2x float p2y float c1
+#N struct 1045-dial float p1x float p1y float p2x float p2y float c1
 float px float py float c2 float c3 float c4 float w1 float w2;
-#N struct 1041-dial float p1x float p1y float p2x float p2y float c1
+#N struct 1046-dial float p1x float p1y float p2x float p2y float c1
 float px float py float c2 float c3 float c4 float w1 float w2;
 #N canvas 169 238 771 288 10;
 #X obj 411 187 gknob 250;
-#A saved 40 75 801 801 1000 1000 5;
+#A saved 73 75 801 801 1000 1000 5;
 #N canvas 0 23 195 247 RGB 0;
 #X obj 17 34 / 255;
 #X obj 17 56 * 8;
@@ -75,6 +75,8 @@ float px float py float c2 float c3 float c4 float w1 float w2;
 #X floatatom 242 150 0 0 0 0 - - -;
 #X text 387 27 GridKnob mod from https://forum.pdpatchrepo.info/topic/10838/no-mouse-external-some-success
 ;
+#X floatatom 411 267 5 0 0 0 - - -;
+#X connect 0 0 14 0;
 #X connect 1 0 12 0;
 #X connect 2 0 1 0;
 #X connect 3 0 1 1;
