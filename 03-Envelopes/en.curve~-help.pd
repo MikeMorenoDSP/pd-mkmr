@@ -27,13 +27,12 @@
 #X obj 12 307 *~;
 #X obj 27 285 cos~;
 #X obj 27 263 osc~ 220;
-#X obj 89 290 tgl 17 0 empty empty LISTEN 0 -9 0 10 -262144 -1 -1 1
+#X obj 89 290 tgl 17 0 empty empty LISTEN 0 -9 0 10 -262144 -1 -1 0
 1;
 #X obj 12 351 clip~ -1 1;
 #X obj 12 373 dac~;
 #X obj 89 312 * 0.2;
 #X obj 12 329 *~;
-#X obj 12 239 curve~;
 #X text 10 11 [curve~] - Exponential Ramp Generator;
 #X text 10 31 [curve~] is similar to [vline~] except that it can create
 curved ramps instead of just linear ones. Negative curve parameters
@@ -44,10 +43,11 @@ CPU usage \, but it's not heavy compatible.;
 #X msg 12 209 1 250 \$1 \, 0.5 250 \$1 250 \, 0 250 \$1 750;
 #X text 355 204 inlet 1: bang;
 #X text 365 224 1) Clear messages;
+#X obj 12 239 en.curve~;
 #X connect 2 0 3 0;
 #X connect 2 0 11 0;
 #X connect 8 0 1 0;
-#X connect 11 0 31 0;
+#X connect 11 0 30 0;
 #X connect 12 0 11 1;
 #X connect 13 0 14 0;
 #X connect 14 0 12 0;
@@ -59,6 +59,6 @@ CPU usage \, but it's not heavy compatible.;
 #X connect 23 0 24 1;
 #X connect 25 0 26 1;
 #X connect 26 0 23 0;
-#X connect 27 0 19 0;
-#X connect 27 0 1 0;
-#X connect 31 0 27 0;
+#X connect 30 0 33 0;
+#X connect 33 0 19 0;
+#X connect 33 0 1 0;
