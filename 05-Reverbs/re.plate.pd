@@ -411,6 +411,9 @@
 #X text 507 218 https://github.com/MikeMorenoAudio;
 #X text 507 198 Made heavy compatible by Mike Moreno;
 #X text 374 47 By Tom Erbe;
+#X obj 219 32 loadbang;
+#X obj 219 53 pack \$1 \$2 \$3;
+#X obj 219 74 unpack f f f;
 #X connect 0 0 61 0;
 #X connect 2 0 71 0;
 #X connect 3 0 102 0;
@@ -534,3 +537,8 @@
 #X connect 109 0 62 1;
 #X connect 109 1 35 1;
 #X connect 109 2 39 1;
+#X connect 114 0 115 0;
+#X connect 115 0 116 0;
+#X connect 116 0 71 0;
+#X connect 116 1 94 0;
+#X connect 116 2 70 0;
