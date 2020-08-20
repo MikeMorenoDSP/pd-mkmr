@@ -1,14 +1,14 @@
-#N canvas 711 476 542 533 10;
+#N canvas 711 476 542 503 10;
 #X obj 231 180 bng 16 250 50 0 empty empty empty 17 7 0 10 -4034 -1
 -1;
 #X obj 231 201 f \$0;
 #X obj 231 243 soundfiler;
 #X obj 231 264 array define -k \$0-sine-to-saw;
 #X msg 231 222 read -resize ./sine-to-saw.wav \$1-sine-to-saw;
-#X obj 80 180 hsl 128 16 1 40 0 1 empty empty WAVETABLE-POSITION -2
+#X obj 80 181 hsl 128 16 1 40 0 1 empty empty WAVETABLE-POSITION -2
 -6 0 12 -1 -262144 -1 0 1;
-#X obj 77 243 line~;
-#X obj 12 264 os.wavetable~ \$0-sine-to-saw 2048;
+#X obj 77 223 line~;
+#X obj 12 244 os.wavetable~ \$0-sine-to-saw 2048;
 #X text 22 66 1: phasor~;
 #X text 22 96 3: wavetable array name;
 #X text 22 111 4: waveform size in samples;
@@ -18,29 +18,30 @@
 #X text 212 51 OUTLETS;
 #X text 222 66 1: wavetable waveform;
 #X text 22 81 2: wavetable position (1 to n);
-#X text 12 451 Taken from Mike Moser-Booth's bl-oscillator abstractions
+#X text 12 431 Taken from Mike Moser-Booth's bl-oscillator abstractions
 from the mmb library.;
-#X text 12 481 https://github.com/dotmmb/mmb;
+#X text 12 461 https://github.com/dotmmb/mmb;
 #X obj 12 141 phasor~ 440;
 #N canvas 0 22 450 278 (subpatch) 0;
 #X array \$0-scope 64 float 0;
 #X coords 0 1 63 -1 128 64 1 0 0;
-#X restore 112 362 graph;
-#X obj 32 285 tabsend~ \$0-scope;
-#X obj 30 321 hsl 128 16 0 0.5 0 1 empty empty OUTPUT -2 -6 0 12 -4034
+#X restore 112 342 graph;
+#X obj 32 265 tabsend~ \$0-scope;
+#X obj 30 301 hsl 128 16 0 0.5 0 1 empty empty OUTPUT -2 -6 0 12 -4034
 -1 -1 0 1;
-#X obj 27 342 pack f 20;
-#X obj 27 363 line~;
-#X obj 12 384 *~;
-#X obj 12 410 dac~ 1 2;
+#X obj 27 322 pack f 20;
+#X obj 27 343 line~;
+#X obj 12 364 *~;
+#X obj 12 390 dac~ 1 2;
 #X obj 231 159 loadbang;
 #X text 231 139 // Load wavetable;
-#X floatatom 77 201 0 0 0 0 - - -;
-#X obj 77 222 pack f 20;
+#X floatatom 158 197 0 0 0 0 - - -;
+#X msg 77 202 \$1 20;
 #X connect 0 0 1 0;
 #X connect 1 0 4 0;
 #X connect 4 0 2 0;
 #X connect 5 0 29 0;
+#X connect 5 0 30 0;
 #X connect 6 0 7 1;
 #X connect 7 0 21 0;
 #X connect 7 0 25 0;
@@ -51,5 +52,4 @@ from the mmb library.;
 #X connect 25 0 26 0;
 #X connect 25 0 26 1;
 #X connect 27 0 0 0;
-#X connect 29 0 30 0;
 #X connect 30 0 6 0;

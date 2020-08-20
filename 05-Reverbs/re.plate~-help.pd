@@ -1,0 +1,81 @@
+#N canvas 572 50 567 530 10;
+#X text 13 51 INLETS;
+#X text 213 51 OUTLETS;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array \$0-scope 64 float 0;
+#X coords 0 1 63 -1 128 64 1 0 0;
+#X restore 319 298 graph;
+#X obj 103 310 tabsend~ \$0-scope;
+#X obj 91 346 hsl 128 16 0 0.5 0 1 empty empty OUTPUT -2 -6 0 12 -4034
+-1 -1 8800 1;
+#X obj 88 367 pack f 20;
+#X obj 88 388 line~;
+#X obj 22 414 *~;
+#X obj 22 141 loadbang;
+#X obj 22 183 readsf~;
+#X obj 22 294 re.plate~;
+#X obj 42 216 hsl 128 16 0 1 0 0 empty \$0-bandwidth BANDWIDTH -2 -6
+0 12 -1 -262144 -1 6350 1;
+#X obj 39 258 line~;
+#X floatatom 120 232 0 0 0 0 - - -;
+#X msg 39 237 \$1 20;
+#X obj 182 216 hsl 128 16 0 1 0 0 empty \$0-damping DAMPING -2 -6 0
+12 -1 -262144 -1 6350 1;
+#X obj 179 258 line~;
+#X floatatom 260 232 0 0 0 0 - - -;
+#X msg 179 237 \$1 20;
+#X obj 322 216 hsl 128 16 0 1 0 0 empty \$0-gain GAIN -2 -6 0 12 -1
+-262144 -1 10160 1;
+#X obj 319 258 line~;
+#X floatatom 400 232 0 0 0 0 - - -;
+#X msg 319 237 \$1 20;
+#X obj 430 18 loadbang;
+#X obj 430 60 f \$0;
+#X msg 430 81 \; \$1-bandwidth 0.5 \; \$1-damping 0.5 \; \$1-gain 0.8
+;
+#X obj 22 435 dac~ 1;
+#X obj 73 414 *~;
+#X obj 73 435 dac~ 2;
+#X msg 22 162 open ./piano.wav \, 1;
+#X text 223 66 1: Left Output;
+#X text 223 81 2: Right Output;
+#X text 23 66 1: Audio Input;
+#X text 23 81 2: Bandwidth (0 to 1);
+#X text 23 96 3: Damping (0 to 1);
+#X text 23 111 4: Gain (0 to 1);
+#X msg 430 39 bang;
+#X text 13 11 [re.plate~];
+#X text 22 480 http://tre.ucsd.edu/wordpress/?p=625;
+#X text 23 26 Tom Erbe's port of Jon Dattorro's plate reverb design
+;
+#X text 22 495 https://ccrma.stanford.edu/~dattorro/EffectDesignPart1.pdf
+;
+#X text 22 465 References:;
+#X connect 4 0 5 0;
+#X connect 5 0 6 0;
+#X connect 6 0 7 1;
+#X connect 6 0 27 1;
+#X connect 7 0 26 0;
+#X connect 8 0 29 0;
+#X connect 9 0 10 0;
+#X connect 9 1 29 0;
+#X connect 10 0 7 0;
+#X connect 10 1 3 0;
+#X connect 10 1 27 0;
+#X connect 11 0 13 0;
+#X connect 11 0 14 0;
+#X connect 12 0 10 1;
+#X connect 14 0 12 0;
+#X connect 15 0 17 0;
+#X connect 15 0 18 0;
+#X connect 16 0 10 2;
+#X connect 18 0 16 0;
+#X connect 19 0 21 0;
+#X connect 19 0 22 0;
+#X connect 20 0 10 3;
+#X connect 22 0 20 0;
+#X connect 23 0 36 0;
+#X connect 24 0 25 0;
+#X connect 27 0 28 0;
+#X connect 29 0 9 0;
+#X connect 36 0 24 0;
