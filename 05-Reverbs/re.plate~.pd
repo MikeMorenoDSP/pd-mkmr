@@ -457,9 +457,9 @@
 #X text 202 643 (O2) Right-Out;
 #X text 12 678 http://tre.ucsd.edu/wordpress/?p=625;
 #X text 12 663 Tom Erbe's port of Jon Dattorro's plate reverb;
-#X obj 112 602 /~ 4;
-#X obj 205 602 /~ 4;
 #X text 369 16 (I4) Gain;
+#X obj 112 602 /~ 2;
+#X obj 205 602 /~ 2;
 #X connect 0 0 61 0;
 #X connect 1 0 39 0;
 #X connect 2 0 1 0;
@@ -532,7 +532,7 @@
 #X connect 59 0 3 1;
 #X connect 59 0 24 1;
 #X connect 61 0 2 0;
-#X connect 62 0 69 0;
-#X connect 62 1 70 0;
-#X connect 69 0 63 0;
-#X connect 70 0 64 0;
+#X connect 62 0 70 0;
+#X connect 62 1 71 0;
+#X connect 70 0 63 0;
+#X connect 71 0 64 0;
