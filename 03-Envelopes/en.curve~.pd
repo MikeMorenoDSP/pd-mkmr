@@ -93,7 +93,7 @@
 #X obj 268 86 t f f;
 #X obj 106 123 t f f;
 #X obj 179 135 t f f f;
-#X obj 46 128 line~;
+#X obj 46 128 vline~;
 #X connect 0 0 42 0;
 #X connect 0 2 41 0;
 #X connect 2 0 6 0;
