@@ -1,8 +1,8 @@
 #N canvas 572 50 567 631 10;
 #X text 13 51 INLETS;
 #X text 213 51 OUTLETS;
-#X obj 91 446 hsl 128 16 0 0.5 0 1 empty empty VOLUME -2 -6 0 12 -4034
--1 -1 12700 1;
+#X obj 91 446 hsl 128 16 0 0.5 0 0 empty empty VOLUME -2 -6 0 12 -4034
+-1 -1 0 1;
 #X obj 88 467 pack f 20;
 #X obj 88 488 line~;
 #X obj 22 514 *~;
@@ -10,7 +10,7 @@
 #X obj 22 183 readsf~;
 #X obj 92 274 re.plate~;
 #X obj 112 196 hsl 128 16 0 1 0 0 empty \$0-bandwidth BANDWIDTH -2
--6 0 12 -128992 -262144 -1 0 1;
+-6 0 12 -128992 -262144 -1 10160 1;
 #X obj 109 238 line~;
 #X floatatom 190 212 0 0 0 0 - - -;
 #X msg 109 217 \$1 20;
@@ -29,7 +29,6 @@
 #X obj 22 535 dac~ 1;
 #X obj 73 514 *~;
 #X obj 73 535 dac~ 2;
-#X msg 22 162 open ./piano.wav \, 1;
 #X text 223 66 1: Left Output;
 #X text 223 81 2: Right Output;
 #X text 23 66 1: Audio Input;
@@ -45,7 +44,7 @@
 ;
 #X text 22 565 References:;
 #X obj 292 287 hsl 128 16 0 1 0 0 empty \$0-drywet DRY/WET -2 -6 0
-12 -128992 -262144 -1 12700 1;
+12 -128992 -262144 -1 10160 1;
 #X obj 289 329 line~;
 #X floatatom 370 303 0 0 0 0 - - -;
 #X msg 289 308 \$1 20;
@@ -59,17 +58,18 @@
 #X obj 143 345 *~;
 #X msg 430 81 \; \$1-bandwidth 0.8 \; \$1-damping 0.3 \; \$1-gain 0.8
 \; \$1-drywet 0.8 \;;
+#X msg 22 162 open ../sound/piano.wav \, 1;
 #X connect 2 0 3 0;
 #X connect 3 0 4 0;
 #X connect 4 0 5 1;
 #X connect 4 0 24 1;
 #X connect 5 0 23 0;
-#X connect 6 0 26 0;
+#X connect 6 0 51 0;
 #X connect 7 0 8 0;
-#X connect 7 0 48 0;
-#X connect 7 1 26 0;
-#X connect 8 0 49 0;
-#X connect 8 1 50 0;
+#X connect 7 0 47 0;
+#X connect 7 1 51 0;
+#X connect 8 0 48 0;
+#X connect 8 1 49 0;
 #X connect 9 0 11 0;
 #X connect 9 0 12 0;
 #X connect 10 0 8 1;
@@ -82,23 +82,23 @@
 #X connect 17 0 20 0;
 #X connect 18 0 8 3;
 #X connect 20 0 18 0;
-#X connect 21 0 33 0;
-#X connect 22 0 51 0;
+#X connect 21 0 32 0;
+#X connect 22 0 50 0;
 #X connect 24 0 25 0;
-#X connect 26 0 7 0;
-#X connect 33 0 22 0;
-#X connect 39 0 41 0;
-#X connect 39 0 42 0;
-#X connect 40 0 50 1;
-#X connect 40 0 49 1;
-#X connect 40 0 47 1;
-#X connect 42 0 40 0;
-#X connect 43 0 5 0;
-#X connect 44 0 24 0;
+#X connect 32 0 22 0;
+#X connect 38 0 40 0;
+#X connect 38 0 41 0;
+#X connect 39 0 49 1;
+#X connect 39 0 48 1;
+#X connect 39 0 46 1;
+#X connect 41 0 39 0;
+#X connect 42 0 5 0;
+#X connect 43 0 24 0;
+#X connect 44 0 45 0;
 #X connect 45 0 46 0;
-#X connect 46 0 47 0;
-#X connect 47 0 48 1;
-#X connect 48 0 43 0;
-#X connect 48 0 44 0;
+#X connect 46 0 47 1;
+#X connect 47 0 42 0;
+#X connect 47 0 43 0;
+#X connect 48 0 42 1;
 #X connect 49 0 43 1;
-#X connect 50 0 44 1;
+#X connect 51 0 7 0;
