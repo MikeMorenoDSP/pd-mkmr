@@ -2,7 +2,7 @@
 #X text 13 51 INLETS;
 #X text 213 51 OUTLETS;
 #X obj 91 381 hsl 128 16 0 0.5 0 0 empty empty VOLUME -2 -6 0 12 -4034
--1 -1 9900 1;
+-1 -1 0 1;
 #X obj 88 402 pack f 20;
 #X obj 88 423 line~;
 #X obj 22 449 *~;
