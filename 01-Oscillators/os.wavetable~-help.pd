@@ -6,7 +6,7 @@
 #X obj 231 264 array define -k \$0-sine-to-saw;
 #X msg 231 222 read -resize ./sine-to-saw.wav \$1-sine-to-saw;
 #X obj 80 181 hsl 128 16 1 40 0 1 empty empty WAVETABLE-POSITION -2
--6 0 12 -128992 -262144 -1 0 1;
+-6 0 12 -128992 -262144 -1 2500 1;
 #X obj 77 223 line~;
 #X obj 12 244 os.wavetable~ \$0-sine-to-saw 2048;
 #X text 22 66 1: phasor~;
@@ -27,7 +27,7 @@ from the mmb library.;
 #X coords 0 1 63 -1 128 64 1 0 0;
 #X restore 112 342 graph;
 #X obj 32 265 tabsend~ \$0-scope;
-#X obj 30 301 hsl 128 16 0 0.5 0 1 empty empty VOLUME -2 -6 0 12 -4034
+#X obj 30 301 hsl 128 16 0 0.5 0 0 empty empty VOLUME -2 -6 0 12 -4034
 -1 -1 0 1;
 #X obj 27 322 pack f 20;
 #X obj 27 343 line~;
