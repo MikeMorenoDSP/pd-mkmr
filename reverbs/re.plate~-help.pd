@@ -58,7 +58,7 @@
 #X obj 143 345 *~;
 #X msg 430 81 \; \$1-bandwidth 0.8 \; \$1-damping 0.3 \; \$1-gain 0.8
 \; \$1-drywet 0.8 \;;
-#X msg 22 162 open ../sound/piano.wav \, 1;
+#X msg 22 162 open ../wavs/piano.wav \, 1;
 #X connect 2 0 3 0;
 #X connect 3 0 4 0;
 #X connect 4 0 5 1;

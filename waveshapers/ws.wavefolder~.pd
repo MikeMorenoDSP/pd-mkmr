@@ -1,0 +1,38 @@
+#N canvas 229 568 296 428 10;
+#X obj 12 130 wrap~;
+#X obj 12 214 min~;
+#X obj 12 83 +~ 1;
+#X obj 12 104 /~ 4;
+#X obj 12 240 *~ 4;
+#X obj 12 261 -~ 1;
+#X obj 114 31 inlet~;
+#X obj 12 57 *~;
+#X obj 33 193 -~;
+#X obj 33 151 loadbang;
+#X msg 33 172 1;
+#X text 52 93 <- Scale;
+#X obj 12 31 inlet~;
+#X obj 12 287 outlet~;
+#X text 52 250 <- Normalize;
+#X text 92 130 | \; | \; | \; | \; | <- Triangle Waveshaper \; | \;
+| \; | \; | \;;
+#X text 22 371 Part of MKMR \; https://github.com/MikeMorenoDSP/pd-mkmr
+;
+#X text 12 331 ––––––––––––––––––––––––––––––
+\; By Miguel Moreno (2021) \; https://linktr.ee/MikeMorenoDSP;
+#X text 12 11 (I1) Input;
+#X text 114 11 (I2) Fold;
+#X text 12 307 (O1) Output;
+#X connect 0 0 1 0;
+#X connect 0 0 8 1;
+#X connect 1 0 4 0;
+#X connect 2 0 3 0;
+#X connect 3 0 0 0;
+#X connect 4 0 5 0;
+#X connect 5 0 13 0;
+#X connect 6 0 7 1;
+#X connect 7 0 2 0;
+#X connect 8 0 1 1;
+#X connect 9 0 10 0;
+#X connect 10 0 8 0;
+#X connect 12 0 7 0;

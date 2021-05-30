@@ -1,14 +1,12 @@
-#N struct 1043-dial float p1x float p1y float p2x float p2y float c1
+#N struct 1009-dial float p1x float p1y float p2x float p2y float c1
 float px float py float c2 float c3 float c4 float w1 float w2;
-#N struct 1044-dial float p1x float p1y float p2x float p2y float c1
+#N struct 1010-dial float p1x float p1y float p2x float p2y float c1
 float px float py float c2 float c3 float c4 float w1 float w2;
-#N struct 1045-dial float p1x float p1y float p2x float p2y float c1
+#N struct 1013-dial float p1x float p1y float p2x float p2y float c1
 float px float py float c2 float c3 float c4 float w1 float w2;
-#N struct 1046-dial float p1x float p1y float p2x float p2y float c1
+#N struct 1014-dial float p1x float p1y float p2x float p2y float c1
 float px float py float c2 float c3 float c4 float w1 float w2;
-#N canvas 169 238 771 288 10;
-#X obj 411 187 gknob 250;
-#A saved 73 75 801 801 1000 1000 5;
+#N canvas 169 238 771 401 10;
 #N canvas 0 23 195 247 RGB 0;
 #X obj 17 34 / 255;
 #X obj 17 56 * 8;
@@ -65,24 +63,34 @@ float px float py float c2 float c3 float c4 float w1 float w2;
 #X floatatom 411 125 5 0 0 0 - - -;
 #X msg 411 145 width \$1;
 #X msg 471 145 size 75;
-#X obj 14 175 gknob 100;
-#A saved 21 100 0 0 0 0 0;
-#X obj 114 200 gknob 75;
-#A saved 84 75 0 0 0 0 0;
-#X obj 190 224 gknob 50;
-#A saved 15 50 0 0 0 0 0;
 #X msg 242 171 color \$1 \$1 999 999;
 #X floatatom 242 150 0 0 0 0 - - -;
-#X text 387 27 GridKnob mod from https://forum.pdpatchrepo.info/topic/10838/no-mouse-external-some-success
-;
 #X floatatom 411 267 5 0 0 0 - - -;
-#X connect 0 0 14 0;
-#X connect 1 0 12 0;
-#X connect 2 0 1 0;
-#X connect 3 0 1 1;
-#X connect 4 0 1 2;
-#X connect 5 0 6 0;
-#X connect 6 0 0 0;
-#X connect 7 0 0 0;
-#X connect 11 0 0 0;
-#X connect 12 0 11 0;
+#X obj 18 250 grid-knob 100;
+#A saved 0 100 0 0 0 0 0;
+#X obj 118 275 grid-knob 75;
+#A saved 0 75 0 0 0 0 0;
+#X obj 411 187 grid-knob 75;
+#A saved 79 75 0 0 0 0 0;
+#X obj 194 299 grid-knob 50;
+#A saved 0 50 0 0 0 0 0;
+#X text 19 39 inlets;
+#X text 19 169 arguments;
+#X text 39 189 1) size;
+#X text 387 27 GridKnob mod by user Balwyn from \; https://forum.pdpatchrepo.info/topic/10838/no-mouse-external-some-success
+;
+#X text 19 79 messages;
+#X text 29 99 1) width;
+#X text 29 59 1) value (0 to 127);
+#X text 29 139 3) size;
+#X text 29 119 2) color;
+#X connect 0 0 8 0;
+#X connect 1 0 0 0;
+#X connect 2 0 0 1;
+#X connect 3 0 0 2;
+#X connect 4 0 5 0;
+#X connect 5 0 12 0;
+#X connect 6 0 12 0;
+#X connect 7 0 12 0;
+#X connect 8 0 7 0;
+#X connect 12 0 9 0;

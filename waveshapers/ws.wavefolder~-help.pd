@@ -1,0 +1,57 @@
+#N canvas 1239 311 416 518 10;
+#X obj 1 1 cnv 46 330 46 empty empty os.wavefold~ 12 23 0 36 -159808
+-262144 0;
+#X obj 11 58 cnv 4 4 24 empty empty Triangle Wavefolder 12 12 0 16
+-1 -1 0;
+#N canvas 694 330 450 220 oscilloscope 0;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array \$0-scope 256 float 0;
+#X coords 0 1 255 -1 100 70 1 0 0;
+#X restore 20 45 graph;
+#X obj 150 112 tabwrite~ \$0-scope;
+#X obj 150 20 inlet~;
+#X obj 210 20 loadbang;
+#X msg 210 41 1;
+#X obj 210 62 metro 200;
+#X connect 2 0 1 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 5 0 1 0;
+#X coords 0 -1 1 1 120 115 1 10 10;
+#X restore 198 215 pd oscilloscope;
+#X obj 120 135 hsl 128 16 1 10 1 1 empty empty FOLDS -2 -6 0 12 -128992
+-262144 -1 0 1;
+#X obj 117 177 line~;
+#X floatatom 206 151 7 0 0 0 - - -;
+#X msg 117 156 \$1 20;
+#X text 31 88 [os.wavefolder~] is a wave shaping distortion that "folds"
+or inverts the signal back onto itself.;
+#X obj 54 232 hsl 101 16 0 1 0 0 empty empty VOLUME -2 -6 0 12 -4034
+-1 -1 0 1;
+#X obj 51 274 pack f 20;
+#X obj 51 295 line~;
+#X obj 36 316 *~;
+#X obj 36 342 dac~ 1 2;
+#X obj 4 368 cnv 3 400 3 empty empty inlets 8 12 0 12 -1 -1 0;
+#X obj 4 425 cnv 3 400 3 empty empty outlets 8 12 0 12 -1 -1 0;
+#X obj 4 468 cnv 3 400 3 empty empty arguments 8 12 0 12 -1 -1 0;
+#X text 30 487 (none);
+#X obj 36 198 ws.wavefolder~;
+#X text 30 442 1) Output (signal) - audio output;
+#X text 30 385 1) Input (signal) - audio input;
+#X text 30 400 2) Fold (signal) - amount of folds (from 1 to n);
+#X obj 51 253 pow 4;
+#X obj 36 177 osc~ 220;
+#X connect 3 0 5 0;
+#X connect 3 0 6 0;
+#X connect 4 0 17 1;
+#X connect 6 0 4 0;
+#X connect 8 0 21 0;
+#X connect 9 0 10 0;
+#X connect 10 0 11 1;
+#X connect 11 0 12 0;
+#X connect 11 0 12 1;
+#X connect 17 0 2 0;
+#X connect 17 0 11 0;
+#X connect 21 0 9 0;
+#X connect 22 0 17 0;
