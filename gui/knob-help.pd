@@ -1,0 +1,63 @@
+#N canvas 152 52 698 702 10;
+#X text 189 189 1) Send symbol;
+#X text 189 209 2) Receive symbol;
+#X text 189 229 3) Fill color (hex);
+#X text 189 249 4) Front color (hex);
+#X text 189 269 5) Background color (hex);
+#X text 189 289 6) Outline color (hex);
+#X text 199 359 knob \$0-s-knob-1 \$0-r-knob-1 #0077b6 #ffffff #81b29a
+;
+#X obj 15 37 knob \$0-s-knob-1 \$0-r-knob-1 #0077b6 #ffffff #81b29a
+;
+#A saved 0.28;
+#X floatatom 15 98 5 0 0 0 - - - 0;
+#X obj 82 37 r \$0-s-knob-1;
+#X floatatom 82 58 5 0 0 0 - - - 0;
+#X floatatom 82 218 5 0 0 0 - - - 0;
+#X obj 82 197 r \$0-s-knob-2;
+#X text 179 339 Example: Blue knob with white front and green background.
+;
+#X text 179 389 Example: Red knob with white front \, white outline
+and grey background.;
+#X text 199 419 knob \$0-s-knob-2 \$0-r-knob-2 #ae2012 #ffffff #403d39
+#ffffff;
+#X obj 15 198 knob \$0-s-knob-2 \$0-r-knob-2 #ae2012 #ffffff #403d39
+#ffffff;
+#A saved 0.4;
+#X floatatom 15 259 5 0 0 0 - - - 0;
+#X text 179 29 [knob];
+#X text 189 49 [knob] is a GUI abstraction made with a vertical slider
+\, circle symbols and canvases to mimic the behavior of a knob.;
+#X text 179 169 arguments ––––;
+#X text 179 319 Examples ––––;
+#X text 179 89 Recommendation ––––;
+#X text 189 139 Or open your patch in a text editor \, replace the
+hex values \, save it and open it again in Pd.;
+#X text 349 169 Input ––––;
+#X text 359 189 1) Value (0 to 1);
+#X text 359 229 1) Value (0 to 1);
+#X text 349 209 Output ––––;
+#X text 179 449 To do ––––;
+#X text 189 109 In order to edit a knob's color \, write it down in
+a comment \, delete the previous knob and make a new one with the edit.
+;
+#X text 189 489 Size parameter;
+#X text 189 509 Label?;
+#X text 189 529 Knob's center marker;
+#X text 186 560 By Miguel Moreno 2021;
+#X text 189 469 Compatibility with Camomile (WIP);
+#X obj 185 599 pdcontrol;
+#X msg 185 578 browse https://linktr.ee/MikeMorenoDSP;
+#X floatatom 15 130 5 0 100 0 - - - 0;
+#X obj 15 150 / 100;
+#X obj 15 171 s \$0-r-knob-2;
+#X obj 15 299 knob;
+#A saved 0;
+#X connect 7 0 8 0;
+#X connect 9 0 10 0;
+#X connect 12 0 11 0;
+#X connect 16 0 17 0;
+#X connect 36 0 35 0;
+#X connect 37 0 38 0;
+#X connect 38 0 39 0;
+#X coords 0 702 1 701 56 56 0;
