@@ -28,15 +28,12 @@ and grey background.;
 #X text 179 29 [knob];
 #X text 189 49 [knob] is a GUI abstraction made with a vertical slider
 \, circle symbols and canvases to mimic the behavior of a knob.;
-#X text 179 169 arguments ––––;
 #X text 179 319 Examples ––––;
 #X text 179 89 Recommendation ––––;
 #X text 189 139 Or open your patch in a text editor \, replace the
 hex values \, save it and open it again in Pd.;
-#X text 349 169 Input ––––;
 #X text 359 189 1) Value (0 to 1);
 #X text 359 229 1) Value (0 to 1);
-#X text 349 209 Output ––––;
 #X text 179 449 To do ––––;
 #X text 189 109 In order to edit a knob's color \, write it down in
 a comment \, delete the previous knob and make a new one with the edit.
@@ -53,11 +50,14 @@ a comment \, delete the previous knob and make a new one with the edit.
 #X obj 15 171 s \$0-r-knob-2;
 #X obj 15 299 knob;
 #A saved 0;
+#X text 349 169 Inlet ––––;
+#X text 349 209 Outlet ––––;
+#X text 179 169 Arguments ––––;
 #X connect 7 0 8 0;
 #X connect 9 0 10 0;
 #X connect 12 0 11 0;
 #X connect 16 0 17 0;
-#X connect 36 0 35 0;
-#X connect 37 0 38 0;
-#X connect 38 0 39 0;
+#X connect 33 0 32 0;
+#X connect 34 0 35 0;
+#X connect 35 0 36 0;
 #X coords 0 702 1 701 56 56 0;
