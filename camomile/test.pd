@@ -1,0 +1,8 @@
+#N canvas 971 53 225 249 10;
+#X obj 19 -673 hsl 128 15 0 127 0 0 \$0-volume-s \$0-volume-r Volume
+-2 -8 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 16 -598 print volume;
+#X obj 15 -644 gui.link 1 \$0-volume;
+#X obj 16 -619 r \$0-volume;
+#X connect 3 0 1 0;
+#X coords 0 249 1 248 385 702 0;

@@ -1,0 +1,35 @@
+#N canvas 334 34 405 568 10;
+#X obj 137 308 r \$0-s-slider;
+#X obj 137 420 s \$0-r-canvas;
+#X obj 135 144 savestate;
+#X obj 214 144 r \$0-s-slider;
+#X obj 199 167 f;
+#X obj 81 167 loadbang;
+#X obj 81 188 f;
+#X obj 81 209 s \$0-r-slider;
+#X msg 137 399 vis_size 14 \$1;
+#X obj 40 42 vsl 20 128 0 127 0 0 \$0-s-slider \$0-r-slider empty 0
+-9 0 10 #404040 #c0ff3e #000000 0 1;
+#X obj 43 139 cnv 1 14 30 \$0-s-canvas \$0-r-canvas empty 20 12 0 14
+#c0ff3e #404040 0;
+#X msg 255 332 127 \$1;
+#X obj 255 353 -;
+#X obj 255 425 s \$0-r-canvas;
+#X msg 255 404 pos 43 \$1;
+#X obj 255 374 + 42;
+#X obj 40 178 outlet;
+#X connect 0 0 8 0;
+#X connect 0 0 11 0;
+#X connect 2 0 6 1;
+#X connect 2 1 4 0;
+#X connect 3 0 4 1;
+#X connect 4 0 2 0;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X connect 8 0 1 0;
+#X connect 9 0 16 0;
+#X connect 11 0 12 0;
+#X connect 12 0 15 0;
+#X connect 14 0 13 0;
+#X connect 15 0 14 0;
+#X coords 0 -1 1 1 20 133 2 40 40;

@@ -1,0 +1,8 @@
+#N canvas 497 514 400 166 10;
+#X msg 12 54 set \$1;
+#X obj 12 12 param.set \$1 \$2-s;
+#X obj 12 33 param.get \$1 \$2;
+#X obj 12 75 s \$2-r;
+#X text 12 95 // Set GUI;
+#X connect 0 0 3 0;
+#X connect 2 0 0 0;

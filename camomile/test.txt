@@ -1,0 +1,5 @@
+type instrument;
+iolayout 0 2;
+code Test;
+compatibility 1.0.7;
+param -name Volume -min 0 -max 127 -nsteps 128 -default 127;
