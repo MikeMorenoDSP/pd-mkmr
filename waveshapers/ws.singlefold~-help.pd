@@ -1,0 +1,74 @@
+#N canvas 652 192 516 654 10;
+#X obj 11 11 cnv 5 5 24 empty empty Single\\\ fold 12 12 0 16 #000000
+#000000 0;
+#N canvas 694 330 450 220 oscilloscope 0;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array \$0-scope 256 float 0;
+#X coords 0 1 255 -1 100 70 1 0 0;
+#X restore 20 45 graph;
+#X obj 150 112 tabwrite~ \$0-scope;
+#X obj 150 20 inlet~;
+#X obj 210 20 loadbang;
+#X msg 210 41 1;
+#X obj 210 62 metro 200;
+#X connect 2 0 1 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 5 0 1 0;
+#X coords 0 -1 1 1 120 115 1 10 10;
+#X restore 230 257 pd oscilloscope;
+#X obj 107 276 hsl 101 16 0 1 0 0 empty empty VOLUME -2 -6 0 12 #00fc04
+#000000 #000000 0 1;
+#X obj 104 318 pack f 20;
+#X obj 104 339 line~;
+#X obj 89 360 *~;
+#X obj 89 386 dac~ 1 2;
+#X obj 104 297 pow 4;
+#X obj 107 81 hsl 101 16 0.8 20 1 1 empty empty FOLDS -2 -6 0 12 #00faff
+#202020 #000000 0 1;
+#X obj 104 123 line~;
+#X floatatom 166 97 7 0 0 0 - - - 0;
+#X msg 104 102 \$1 20;
+#X obj 11 431 cnv 5 490 5 empty empty INLETS: 8 18 0 13 #202020 #000000
+0;
+#X obj 11 611 cnv 5 490 5 empty empty empty 8 18 0 13 #202020 #000000
+0;
+#X obj 11 517 cnv 2 490 2 empty empty OUTLETS: 8 12 0 13 #202020 #000000
+0;
+#X text 107 451 1) signal - signal input;
+#X obj 11 557 cnv 2 490 2 empty empty ARGUMENTS: 8 12 0 13 #202020
+#000000 0;
+#N canvas 911 534 387 160 reference 0;
+#X restore 17 625 pd reference;
+#X text 107 531 1) signal - folded signal;
+#X obj 39 81 osc~ 220;
+#X obj 89 143 *~;
+#X obj 89 231 clip~ -1 1;
+#X obj 89 210 ws.singlefold~ -1 1.1;
+#X obj 89 168 ws.singlefold~ -1 1.1;
+#X text 159 231 <- mandatory hard clip at the end to avoid overload
+;
+#X obj 89 190 ws.singlefold~ -0.8 1;
+#X text 29 42 [ws.singlefold~] is a single wavefold to create a custom
+wavefolder waveshaper with different properties on each fold;
+#X text 107 490 3) float - upper limit;
+#X text 107 470 2) float - lower limit;
+#X text 107 570 1) float - lower limit;
+#X text 107 590 2) float - upper limit;
+#X connect 2 0 7 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 1;
+#X connect 5 0 6 0;
+#X connect 5 0 6 1;
+#X connect 7 0 3 0;
+#X connect 8 0 10 0;
+#X connect 8 0 11 0;
+#X connect 9 0 20 1;
+#X connect 11 0 9 0;
+#X connect 19 0 20 0;
+#X connect 20 0 23 0;
+#X connect 21 0 5 0;
+#X connect 21 0 1 0;
+#X connect 22 0 21 0;
+#X connect 23 0 25 0;
+#X connect 25 0 22 0;

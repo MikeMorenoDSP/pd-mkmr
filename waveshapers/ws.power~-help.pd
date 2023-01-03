@@ -1,0 +1,77 @@
+#N canvas 652 192 516 636 10;
+#X obj 11 11 cnv 5 5 24 empty empty Power\ function\ waveshaper 12
+12 0 16 #000000 #000000 0;
+#N canvas 694 330 450 220 oscilloscope 0;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array \$0-scope 256 float 0;
+#X coords 0 1 255 -1 100 70 1 0 0;
+#X restore 20 45 graph;
+#X obj 150 112 tabwrite~ \$0-scope;
+#X obj 150 20 inlet~;
+#X obj 210 20 loadbang;
+#X msg 210 41 1;
+#X obj 210 62 metro 200;
+#X connect 2 0 1 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 5 0 1 0;
+#X coords 0 -1 1 1 120 115 1 10 10;
+#X restore 180 273 pd oscilloscope;
+#X obj 93 189 hsl 101 16 0 10 0 1 empty empty EXPONENTIAL\ FACTOR -2
+-6 0 12 #00faff #000000 #000000 5000 1;
+#X obj 90 231 line~;
+#X floatatom 152 205 7 0 0 0 - - - 0;
+#X msg 90 210 \$1 20;
+#X obj 57 291 hsl 101 16 0 1 0 0 empty empty VOLUME -2 -6 0 12 #00fc04
+#000000 #000000 0 1;
+#X obj 54 333 pack f 20;
+#X obj 54 354 line~;
+#X obj 39 375 *~;
+#X obj 39 401 dac~ 1 2;
+#X obj 54 312 pow 4;
+#X obj 39 257 ws.power~;
+#X obj 67 109 hsl 101 16 -1 1 0 1 empty empty OFFSET -2 -6 0 12 #00faff
+#202020 #000000 5000 1;
+#X obj 64 151 line~;
+#X floatatom 126 125 7 0 0 0 - - - 0;
+#X msg 64 130 \$1 20;
+#X obj 39 72 osc~ 220;
+#X obj 11 431 cnv 5 490 5 empty empty INLETS: 8 18 0 13 #202020 #000000
+0;
+#X obj 11 591 cnv 5 490 5 empty empty empty 8 18 0 13 #202020 #000000
+0;
+#X obj 11 517 cnv 2 490 2 empty empty OUTLETS: 8 12 0 13 #202020 #000000
+0;
+#X text 107 451 1) signal - signal input;
+#X text 107 471 2) float/signal - offset (default 0 \, from -1 to 1)
+;
+#X text 107 491 3) float/signal - exponential factor (from 0 to n)
+;
+#X text 107 531 1) signal - the signal raised to a given power;
+#X obj 11 557 cnv 2 490 2 empty empty ARGUMENTS: 8 12 0 13 #202020
+#000000 0;
+#X text 107 571 (none);
+#X text 29 42 [ws.power~] is a power function waveshaper for signals.
+;
+#N canvas 911 534 387 160 reference 0;
+#X text 9 11 power~ from the else library by Alexandre Torres Porres
+;
+#X text 9 31 https://github.com/porres/pd-else;
+#X restore 17 605 pd reference;
+#X connect 2 0 4 0;
+#X connect 2 0 5 0;
+#X connect 3 0 12 2;
+#X connect 5 0 3 0;
+#X connect 6 0 11 0;
+#X connect 7 0 8 0;
+#X connect 8 0 9 1;
+#X connect 9 0 10 0;
+#X connect 9 0 10 1;
+#X connect 11 0 7 0;
+#X connect 12 0 9 0;
+#X connect 12 0 1 0;
+#X connect 13 0 15 0;
+#X connect 13 0 16 0;
+#X connect 14 0 12 1;
+#X connect 16 0 14 0;
+#X connect 17 0 12 0;
