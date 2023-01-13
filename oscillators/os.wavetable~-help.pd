@@ -141,10 +141,12 @@ adapted pd wavetable version into a wave file and load it into an array.
 #X obj 405 121 bng 16 250 50 0 empty empty Write\\\ Pd\\\ wavetable\\\ to\\\ wav
 0 -8 0 10 #ff0400 #000000 #000000;
 #X obj 405 230 soundfiler;
-#X msg 405 209 write -wave ./pd-wavetable \$1-wavetable;
 #X obj 405 188 pack s \$0;
 #X obj 405 167 symbol;
 #X text 438 127 Wavetable name;
+#X msg 405 209 write -wave ./\$1 \$2-wavetable;
+#X obj 581 112 loadbang;
+#X msg 581 132 symbol pd-wavetable;
 #X connect 0 0 1 0;
 #X connect 1 0 19 0;
 #X connect 2 0 21 0;
@@ -189,11 +191,13 @@ adapted pd wavetable version into a wave file and load it into an array.
 #X connect 53 0 52 0;
 #X connect 54 0 52 0;
 #X connect 57 0 40 0;
-#X connect 59 0 64 1;
-#X connect 60 0 64 0;
-#X connect 62 0 61 0;
+#X connect 59 0 63 1;
+#X connect 60 0 63 0;
+#X connect 62 0 65 0;
 #X connect 63 0 62 0;
-#X connect 64 0 63 0;
+#X connect 65 0 61 0;
+#X connect 66 0 67 0;
+#X connect 67 0 59 0;
 #X restore 279 431 pd how-to-import-external-wavetables;
 #N canvas 105 82 969 530 how-to-generate-wavetables 0;
 #X obj 53 199 cnv 15 450 90 empty empty empty 20 12 0 14 #dfdfdf #404040
