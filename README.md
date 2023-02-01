@@ -5,8 +5,7 @@ A compilation of vanilla made abstractions and instruments.
 Miguel Moreno
 
 ## License
-"Commons Clause" License Condition v1.0 with 3-Clause BSD License.
-For information on usage and redistribution, and for a DISCLAIMER OF ALL WARRANTIES, see License.txt included in this repository.
+BSD 3-Clause "New" or "Revised" License
 
 ### References:
 * Enzien Audio - heavylib library (https://github.com/enzienaudio/heavylib)
