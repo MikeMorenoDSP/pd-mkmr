@@ -1,68 +1,76 @@
-#N canvas 85 394 532 559 10;
-#X text 13 47 INLETS;
-#X text 183 47 OUTLETS;
-#X obj 91 392 hsl 128 16 0 0.5 0 0 empty empty VOLUME -2 -6 0 12 -4034
--1 -1 0 1;
-#X obj 88 413 pack f 20;
-#X obj 88 434 line~;
-#X obj 22 450 *~;
-#X obj 22 137 loadbang;
-#X obj 22 179 readsf~;
-#X obj 360 14 loadbang;
-#X obj 360 56 f \$0;
-#X text 23 62 1: Audio Input;
-#X msg 360 35 bang;
-#X text 22 511 References:;
-#X obj 121 274 hsl 128 16 0 1 0 0 empty \$0-interpolated/s&h INTERPOLATED/S&H
--2 -6 0 12 -128992 -262144 -1 0 1;
-#X obj 118 316 line~;
-#X floatatom 199 290 0 0 0 0 - - -;
-#X msg 118 295 \$1 20;
-#X obj 22 357 *~;
-#X obj 103 357 *~;
-#X msg 22 158 open ../sound/piano.wav \, 1;
-#X obj 22 255 fx.downsample~;
-#X text 13 7 [fx.downsample~];
-#X text 23 22 Downsampler with linear interpolation.;
-#X obj 22 471 dac~ 1 2;
-#X text 22 526 downsampler from else library;
-#X obj 106 192 hsl 128 16 10 44100 1 0 empty \$0-frequency FREQUENCY
--2 -6 0 12 -128992 -262144 -1 9681 1;
-#X obj 103 234 line~;
-#X floatatom 184 208 0 0 0 0 - - -;
-#X msg 103 213 \$1 20;
-#X obj 22 378 +~;
-#X obj 37 311 sig~ 1;
-#X obj 37 332 -~;
-#X text 193 62 1: Interpolated Output;
-#X text 23 77 2: Sampling Frequency;
-#X text 193 77 2: Sample and Hold Output;
-#X msg 360 77 \; \$1-frequency 6000 \; \$1-interpolated/s&h 0 \;;
-#X connect 2 0 3 0;
+#N canvas 574 162 523 652 10;
+#X obj 11 11 cnv 5 5 24 empty empty Downsampler\ interpolator 12 12
+0 16 #000000 #000000 0;
+#N canvas 694 330 450 220 oscilloscope 0;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array \$0-scope 256 float 0;
+#X coords 0 1 255 -1 100 70 1 0 0;
+#X restore 20 45 graph;
+#X obj 150 112 tabwrite~ \$0-scope;
+#X obj 150 20 inlet~;
+#X obj 210 20 loadbang;
+#X msg 210 41 1;
+#X obj 210 62 metro 200;
+#X connect 2 0 1 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 5 0 1 0;
+#X coords 0 -1 1 1 120 115 1 10 10;
+#X restore 180 234 pd oscilloscope;
+#X obj 57 253 hsl 101 16 0 1 0 0 empty empty VOLUME -2 -6 0 12 #00fc04
+#000000 #000000 0 1;
+#X obj 54 295 pack f 20;
+#X obj 54 316 line~;
+#X obj 39 337 *~;
+#X obj 39 363 dac~ 1 2;
+#X obj 54 274 pow 4;
+#X obj 11 391 cnv 5 490 5 empty empty INLETS: 8 18 0 13 #202020 #000000
+0;
+#X obj 11 591 cnv 5 490 5 empty empty empty 8 18 0 13 #202020 #000000
+0;
+#X obj 11 497 cnv 2 490 2 empty empty OUTLETS: 8 12 0 13 #202020 #000000
+0;
+#X obj 11 537 cnv 2 490 2 empty empty ARGUMENTS: 8 12 0 13 #202020
+#000000 0;
+#N canvas 769 642 413 160 reference 0;
+#X text 19 31 http://paulbourke.net/miscellaneous/interpolation/;
+#X text 9 11 Paul Bourke - Interpolation methods;
+#X text 9 51 Alexandre Torres Porres - Live Electronics Tutorial;
+#X text 19 71 https://github.com/porres/Live-Electronics-Tutorial;
+#X text 19 111 https://mathr.co.uk/blog/2015-02-12_bandlimited_wavetables.html
+;
+#X text 9 91 [tabread4c~] by Claude Heiland-Allen;
+#X restore 17 605 pd reference;
+#X obj 82 130 hsl 101 16 20 20000 1 1 empty empty FREQUENCY -2 -6 0
+12 #00faff #202020 #000000 6000 1;
+#X obj 79 172 line~;
+#X floatatom 141 146 7 0 0 0 - - - 0;
+#X msg 79 151 \$1 20;
+#X obj 39 218 fx.downsample~;
+#X obj 120 192 hradio 16 1 1 4 empty empty INTERPOLATION 0 -8 0 10
+#00faff #000000 #000000 0;
+#X text 107 411 1) signal - signal to be downsampled;
+#X text 107 430 2) float/signal - samplerate in Hz;
+#X text 107 451 3) float - interpolation method (from 0 to 3);
+#X text 127 471 0: none \, 1: linear \, 2: cosine \, 3: cubic;
+#X text 107 511 1) signal - downsampled signal;
+#X text 107 551 1) symbol - interpolation method;
+#X text 117 571 (samphold \, linear \, cosine \, cubic);
+#X text 29 43 [fx.downsample~] samples a signal received in the left
+inlet at a frequency rate in hertz. It has four types of interpolation
+methods.;
+#X obj 39 91 noise~;
+#X connect 2 0 7 0;
 #X connect 3 0 4 0;
 #X connect 4 0 5 1;
-#X connect 5 0 23 0;
-#X connect 5 0 23 1;
-#X connect 6 0 19 0;
-#X connect 7 0 20 0;
-#X connect 7 1 19 0;
-#X connect 8 0 11 0;
-#X connect 9 0 35 0;
-#X connect 11 0 9 0;
+#X connect 5 0 6 0;
+#X connect 5 0 6 1;
+#X connect 7 0 3 0;
 #X connect 13 0 15 0;
 #X connect 13 0 16 0;
-#X connect 14 0 18 1;
-#X connect 14 0 31 1;
+#X connect 14 0 17 1;
 #X connect 16 0 14 0;
-#X connect 17 0 29 0;
-#X connect 18 0 29 1;
-#X connect 19 0 7 0;
-#X connect 20 0 17 0;
-#X connect 20 1 18 0;
-#X connect 25 0 27 0;
-#X connect 25 0 28 0;
-#X connect 26 0 20 1;
-#X connect 28 0 26 0;
-#X connect 29 0 5 0;
-#X connect 30 0 31 0;
-#X connect 31 0 17 1;
+#X connect 17 0 5 0;
+#X connect 17 0 1 0;
+#X connect 18 0 17 2;
+#X connect 27 0 17 0;
