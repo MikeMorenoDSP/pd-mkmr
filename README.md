@@ -8,6 +8,8 @@ A compilation of abstractions and instruments compatible with Pure Data vanilla.
   <a href="https://github.com/MikeMorenoDSP/pd-mkmr/archive/refs/heads/master.zip">Download ZIP</a>
 </h3>
 
+--------------------------------------------------------------------------
+
 ## License
 BSD 3-Clause "New" or "Revised" License
 
