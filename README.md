@@ -1,8 +1,11 @@
-# pd-mkmr
-A compilation of vanilla made abstractions and instruments.
+# MKMR library
+A compilation of abstractions and instruments compatible with Pure Data vanilla.
 
-## Author
-Miguel Moreno
+<h2 align="center">
+  <a href="https://github.com/MikeMorenoDSP/pd-mkmr/archive/refs/heads/master.zip">Download ZIP</a>
+</h2>
+
+```Copyright © 2018-2023 Miguel Moreno```
 
 ## License
 BSD 3-Clause "New" or "Revised" License
